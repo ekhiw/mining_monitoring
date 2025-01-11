@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mining_monitoring/pages/login/login.dart';
+import 'package:mining_monitoring/pages/regdevice/register_device.dart';
 import 'package:mining_monitoring/widgets/app_bar_widget.dart';
 import 'package:tailwind_colors/tailwind_colors.dart';
 
@@ -23,11 +24,13 @@ enum SGRoute {
 }
 
 final GlobalKey<NavigatorState> _rootNavigatorKey =
-GlobalKey<NavigatorState>(debugLabel: 'root');
-final GlobalKey<NavigatorState> _sectionANavigatorKey =
-GlobalKey<NavigatorState>(debugLabel: 'sectionANav');
-final GlobalKey<NavigatorState> _sectionBNavigatorKey =
-GlobalKey<NavigatorState>(debugLabel: 'sectionBNav');
+    GlobalKey<NavigatorState>(debugLabel: 'root');
+final GlobalKey<NavigatorState> _homeNavigatorKey =
+    GlobalKey<NavigatorState>(debugLabel: 'homeNav');
+final GlobalKey<NavigatorState> _loginNavigatorKey =
+    GlobalKey<NavigatorState>(debugLabel: 'loginNav');
+final GlobalKey<NavigatorState> _registerNavigatorKey =
+    GlobalKey<NavigatorState>(debugLabel: 'registerNav');
 
 @Singleton()
 class SGGoRouter {
@@ -46,7 +49,7 @@ class SGGoRouter {
         },
         branches: <StatefulShellBranch>[
           StatefulShellBranch(
-            navigatorKey: _sectionANavigatorKey,
+            navigatorKey: _homeNavigatorKey,
             routes: <RouteBase>[
               GoRoute(
                 path: SGRoute.home.route,
@@ -56,7 +59,7 @@ class SGGoRouter {
             ]
           ),
           StatefulShellBranch(
-            navigatorKey: _sectionBNavigatorKey,
+            navigatorKey: _loginNavigatorKey,
             routes: <RouteBase> [
               GoRoute(
                 path: SGRoute.login.route,
@@ -64,6 +67,16 @@ class SGGoRouter {
                 const LoginScreen(),
               ).fade()
             ]
+          ),
+          StatefulShellBranch(
+              navigatorKey: _registerNavigatorKey,
+              routes: <RouteBase> [
+                GoRoute(
+                  path: SGRoute.register_device.route,
+                  builder: (BuildContext context, GoRouterState state) =>
+                  const RegisterDeviceScreen(),
+                ).fade()
+              ]
           )
         ])],
     redirect: _authGuard,

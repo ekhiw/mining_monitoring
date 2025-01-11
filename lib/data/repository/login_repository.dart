@@ -1,21 +1,21 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+import 'package:mining_monitoring/constants/endpoints.dart';
+
+import '../model/api_error_response.dart';
 
 @injectable
 class LoginRepository {
   LoginRepository(this._dio);
   final Dio _dio;
 
-  Future<bool> login(String nik) async {
+  Future<dynamic> login(String nik) async {
     try {
-      final response = await _dio.get("");
-      
-      if (response.statusCode == 200) {
-        return true;
-      }
-      return false;
-    } catch (e) {
-      throw Exception('Login failed: ${e.toString()}');
+      final response = await _dio.get("/equipments/devices/${nik}");
+
+      return response;
+    } on DioException catch (e) {
+      return ApiErrorResponse.fromJson(e.response?.data);
     }
   }
 }

@@ -21,7 +21,7 @@ class LoginNotifier extends StateNotifier<LoginState> {
     state = const LoginState.loading();
     try {
       final success = await loginRepository.login(nik);
-      if (success) {
+      if (success.status) {
         state = const LoginState.success("Login successful");
       } else {
         state = const LoginState.error("Can't find your NIK");

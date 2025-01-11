@@ -42,17 +42,17 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    Alice alice = Alice(configuration: AliceConfiguration(
-      showNotification: true,
-      showInspectorOnShake: true,
-      navigatorKey: navigatorKey,
-      showShareButton: true
-    ));
-    AliceDioAdapter aliceDioAdapter = AliceDioAdapter();
-    alice.addAdapter(aliceDioAdapter);
-
-    final dioProv = ref.read(dioProvider);
-    dioProv.interceptors.add(aliceDioAdapter);
+    // Alice alice = Alice(configuration: AliceConfiguration(
+    //   showNotification: true,
+    //   showInspectorOnShake: true,
+    //   navigatorKey: navigatorKey,
+    //   showShareButton: true
+    // ));
+    // AliceDioAdapter aliceDioAdapter = AliceDioAdapter();
+    // alice.addAdapter(aliceDioAdapter);
+    //
+    // final dioProv = ref.read(dioProvider);
+    // dioProv.interceptors.add(aliceDioAdapter);
 
     return MaterialApp.router(
       routerConfig: getIt<SGGoRouter>().getGoRouter,

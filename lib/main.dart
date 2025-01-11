@@ -2,6 +2,7 @@ import 'package:alice/alice.dart';
 import 'package:alice/model/alice_configuration.dart';
 import 'package:alice_dio/alice_dio_adapter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_fullscreen/flutter_fullscreen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get_it/get_it.dart';
 import 'package:get_storage/get_storage.dart';
@@ -25,6 +26,9 @@ void main() async {
   setupDependencies();
   await GetStorage.init();
   await getIt.allReady();
+
+  await FullScreen.ensureInitialized();
+  FullScreen.setFullScreen(true);
 
   runApp(
       ProviderScope(

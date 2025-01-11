@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mining_monitoring/pages/login/login.dart';
+import 'package:mining_monitoring/widgets/app_bar_widget.dart';
+import 'package:tailwind_colors/tailwind_colors.dart';
 
 import '../pages/home/home.dart';
 import '../router/fade_extension.dart';
@@ -20,26 +22,55 @@ enum SGRoute {
   String get name => toString().replaceAll('SGRoute.', '');
 }
 
+final GlobalKey<NavigatorState> _rootNavigatorKey =
+GlobalKey<NavigatorState>(debugLabel: 'root');
+final GlobalKey<NavigatorState> _sectionANavigatorKey =
+GlobalKey<NavigatorState>(debugLabel: 'sectionANav');
+final GlobalKey<NavigatorState> _sectionBNavigatorKey =
+GlobalKey<NavigatorState>(debugLabel: 'sectionBNav');
+
 @Singleton()
 class SGGoRouter {
   final GoRouter goRoute = GoRouter(
+    navigatorKey: _rootNavigatorKey,
     initialLocation: SGRoute.home.route,
-    routes: <GoRoute>[
-      GoRoute(
-        path: SGRoute.home.route,
-        builder: (BuildContext context, GoRouterState state) =>
-        const HomeScreen(),
-      ).fade(),
-      GoRoute(
-        path: SGRoute.login.route,
-        builder: (BuildContext context, GoRouterState state) =>
-        const LoginScreen(),
-      ).fade(),
-    ],
+    routes:<RouteBase>[ StatefulShellRoute.indexedStack(
+        builder: (context, state, navigationShell) {
+          return Scaffold(
+              appBar: AppBar(
+                backgroundColor:TWColors.gray.shade900,
+                title: AppBarWidget(),
+              ),
+              body: navigationShell,
+          );
+        },
+        branches: <StatefulShellBranch>[
+          StatefulShellBranch(
+            navigatorKey: _sectionANavigatorKey,
+            routes: <RouteBase>[
+              GoRoute(
+                path: SGRoute.home.route,
+                builder: (BuildContext context, GoRouterState state) =>
+                const HomeScreen(),
+              ).fade()
+            ]
+          ),
+          StatefulShellBranch(
+            navigatorKey: _sectionBNavigatorKey,
+            routes: <RouteBase> [
+              GoRoute(
+                path: SGRoute.login.route,
+                builder: (BuildContext context, GoRouterState state) =>
+                const LoginScreen(),
+              ).fade()
+            ]
+          )
+        ])],
     redirect: _authGuard,
   );
   GoRouter get getGoRouter => goRoute;
 }
+
 
 final String? Function(BuildContext context, GoRouterState state) _authGuard =
     (BuildContext context, GoRouterState state) {

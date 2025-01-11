@@ -5,14 +5,15 @@ import 'package:mining_monitoring/pages/login/login.dart';
 
 import '../pages/home/home.dart';
 import '../router/fade_extension.dart';
-import '../data/user_store.dart';
+import '../data/store/user_store.dart';
 import '../di/component/service_locator.dart';
 
-GetStoreHelper getStoreHelper = getIt<GetStoreHelper>();
+GetUserStoreHelper getStoreHelper = getIt<GetUserStoreHelper>();
 
 enum SGRoute {
   home,
   login,
+  register_device,
   chat;
 
   String get route => '/${toString().replaceAll('SGRoute.', '')}';

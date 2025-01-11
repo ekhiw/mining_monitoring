@@ -4,8 +4,8 @@ import 'package:injectable/injectable.dart';
 const String nikKey = 'nik';
 
 @injectable
-class GetStoreHelper {
-  GetStoreHelper(this.getStorage);
+class GetUserStoreHelper {
+  GetUserStoreHelper(this.getStorage);
   GetStorage getStorage;
 
   Future<void> saveNik(String nik) async {

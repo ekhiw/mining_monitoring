@@ -1,10 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mining_monitoring/constants/endpoints.dart';
+import 'package:mining_monitoring/data/model/responses/check_device_id_response_entity.dart';
+import 'package:mining_monitoring/data/model/responses/error_response_entity.dart';
 
-import '../model/api_error_response.dart';
-import '../model/device_check_response.dart';
-import '../model/device_regis_response.dart';
 
 @injectable
 class DeviceRegisRepository {
@@ -14,14 +13,15 @@ class DeviceRegisRepository {
   Future<dynamic> checkDeviceId(String deviceId) async {
     try {
       Response response = await _dio.get("/equipments/devices/${deviceId}");
+      print(response.data.toString());
 
       if (response.statusCode == 200) {
-        return DeviceCheckResponse.fromJson(response.data);
+        return CheckDeviceIdResponseEntity.fromJson(response.data);
       } else {
-        return DeviceCheckResponse.fromJson(response.data);
+        return CheckDeviceIdResponseEntity.fromJson(response.data);
       }
     } on DioException catch (e) {
-      return ApiErrorResponse.fromJson(e.response?.data);
+      return ErrorResponseEntity.fromJson(e.response?.data);
     }
   }
 
@@ -35,9 +35,9 @@ class DeviceRegisRepository {
         }
       );
 
-      return DeviceRegisResponse.fromJson(response.data);
+      return CheckDeviceIdResponseEntity.fromJson(response.data);
     } on DioException catch (e) {
-      return ApiErrorResponse.fromJson(e.response?.data);
+      return ErrorResponseEntity.fromJson(e.response?.data);
     }
   }
 }

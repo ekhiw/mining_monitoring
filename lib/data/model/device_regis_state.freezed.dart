@@ -22,6 +22,7 @@ mixin _$DeviceRegisState {
     required TResult Function() checkDeviceLoading,
     required TResult Function() deviceNotFound,
     required TResult Function() deviceRegisLoading,
+    required TResult Function() webSocketSetupLoading,
     required TResult Function() waitActivation,
     required TResult Function() success,
     required TResult Function(String message) error,
@@ -33,6 +34,7 @@ mixin _$DeviceRegisState {
     TResult? Function()? checkDeviceLoading,
     TResult? Function()? deviceNotFound,
     TResult? Function()? deviceRegisLoading,
+    TResult? Function()? webSocketSetupLoading,
     TResult? Function()? waitActivation,
     TResult? Function()? success,
     TResult? Function(String message)? error,
@@ -44,6 +46,7 @@ mixin _$DeviceRegisState {
     TResult Function()? checkDeviceLoading,
     TResult Function()? deviceNotFound,
     TResult Function()? deviceRegisLoading,
+    TResult Function()? webSocketSetupLoading,
     TResult Function()? waitActivation,
     TResult Function()? success,
     TResult Function(String message)? error,
@@ -56,6 +59,8 @@ mixin _$DeviceRegisState {
     required TResult Function(_CheckDeviceLoading value) checkDeviceLoading,
     required TResult Function(_DeviceNotFound value) deviceNotFound,
     required TResult Function(_DeviceRegisLoading value) deviceRegisLoading,
+    required TResult Function(_WebSocketSetupLoading value)
+        webSocketSetupLoading,
     required TResult Function(_WaitActivation value) waitActivation,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
@@ -67,6 +72,7 @@ mixin _$DeviceRegisState {
     TResult? Function(_CheckDeviceLoading value)? checkDeviceLoading,
     TResult? Function(_DeviceNotFound value)? deviceNotFound,
     TResult? Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult? Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
     TResult? Function(_WaitActivation value)? waitActivation,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
@@ -78,6 +84,7 @@ mixin _$DeviceRegisState {
     TResult Function(_CheckDeviceLoading value)? checkDeviceLoading,
     TResult Function(_DeviceNotFound value)? deviceNotFound,
     TResult Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
     TResult Function(_WaitActivation value)? waitActivation,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
@@ -146,6 +153,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() checkDeviceLoading,
     required TResult Function() deviceNotFound,
     required TResult Function() deviceRegisLoading,
+    required TResult Function() webSocketSetupLoading,
     required TResult Function() waitActivation,
     required TResult Function() success,
     required TResult Function(String message) error,
@@ -160,6 +168,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? checkDeviceLoading,
     TResult? Function()? deviceNotFound,
     TResult? Function()? deviceRegisLoading,
+    TResult? Function()? webSocketSetupLoading,
     TResult? Function()? waitActivation,
     TResult? Function()? success,
     TResult? Function(String message)? error,
@@ -174,6 +183,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? checkDeviceLoading,
     TResult Function()? deviceNotFound,
     TResult Function()? deviceRegisLoading,
+    TResult Function()? webSocketSetupLoading,
     TResult Function()? waitActivation,
     TResult Function()? success,
     TResult Function(String message)? error,
@@ -192,6 +202,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_CheckDeviceLoading value) checkDeviceLoading,
     required TResult Function(_DeviceNotFound value) deviceNotFound,
     required TResult Function(_DeviceRegisLoading value) deviceRegisLoading,
+    required TResult Function(_WebSocketSetupLoading value)
+        webSocketSetupLoading,
     required TResult Function(_WaitActivation value) waitActivation,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
@@ -206,6 +218,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_CheckDeviceLoading value)? checkDeviceLoading,
     TResult? Function(_DeviceNotFound value)? deviceNotFound,
     TResult? Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult? Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
     TResult? Function(_WaitActivation value)? waitActivation,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
@@ -220,6 +233,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_CheckDeviceLoading value)? checkDeviceLoading,
     TResult Function(_DeviceNotFound value)? deviceNotFound,
     TResult Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
     TResult Function(_WaitActivation value)? waitActivation,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
@@ -278,6 +292,7 @@ class _$CheckDeviceLoadingImpl implements _CheckDeviceLoading {
     required TResult Function() checkDeviceLoading,
     required TResult Function() deviceNotFound,
     required TResult Function() deviceRegisLoading,
+    required TResult Function() webSocketSetupLoading,
     required TResult Function() waitActivation,
     required TResult Function() success,
     required TResult Function(String message) error,
@@ -292,6 +307,7 @@ class _$CheckDeviceLoadingImpl implements _CheckDeviceLoading {
     TResult? Function()? checkDeviceLoading,
     TResult? Function()? deviceNotFound,
     TResult? Function()? deviceRegisLoading,
+    TResult? Function()? webSocketSetupLoading,
     TResult? Function()? waitActivation,
     TResult? Function()? success,
     TResult? Function(String message)? error,
@@ -306,6 +322,7 @@ class _$CheckDeviceLoadingImpl implements _CheckDeviceLoading {
     TResult Function()? checkDeviceLoading,
     TResult Function()? deviceNotFound,
     TResult Function()? deviceRegisLoading,
+    TResult Function()? webSocketSetupLoading,
     TResult Function()? waitActivation,
     TResult Function()? success,
     TResult Function(String message)? error,
@@ -324,6 +341,8 @@ class _$CheckDeviceLoadingImpl implements _CheckDeviceLoading {
     required TResult Function(_CheckDeviceLoading value) checkDeviceLoading,
     required TResult Function(_DeviceNotFound value) deviceNotFound,
     required TResult Function(_DeviceRegisLoading value) deviceRegisLoading,
+    required TResult Function(_WebSocketSetupLoading value)
+        webSocketSetupLoading,
     required TResult Function(_WaitActivation value) waitActivation,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
@@ -338,6 +357,7 @@ class _$CheckDeviceLoadingImpl implements _CheckDeviceLoading {
     TResult? Function(_CheckDeviceLoading value)? checkDeviceLoading,
     TResult? Function(_DeviceNotFound value)? deviceNotFound,
     TResult? Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult? Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
     TResult? Function(_WaitActivation value)? waitActivation,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
@@ -352,6 +372,7 @@ class _$CheckDeviceLoadingImpl implements _CheckDeviceLoading {
     TResult Function(_CheckDeviceLoading value)? checkDeviceLoading,
     TResult Function(_DeviceNotFound value)? deviceNotFound,
     TResult Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
     TResult Function(_WaitActivation value)? waitActivation,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
@@ -410,6 +431,7 @@ class _$DeviceNotFoundImpl implements _DeviceNotFound {
     required TResult Function() checkDeviceLoading,
     required TResult Function() deviceNotFound,
     required TResult Function() deviceRegisLoading,
+    required TResult Function() webSocketSetupLoading,
     required TResult Function() waitActivation,
     required TResult Function() success,
     required TResult Function(String message) error,
@@ -424,6 +446,7 @@ class _$DeviceNotFoundImpl implements _DeviceNotFound {
     TResult? Function()? checkDeviceLoading,
     TResult? Function()? deviceNotFound,
     TResult? Function()? deviceRegisLoading,
+    TResult? Function()? webSocketSetupLoading,
     TResult? Function()? waitActivation,
     TResult? Function()? success,
     TResult? Function(String message)? error,
@@ -438,6 +461,7 @@ class _$DeviceNotFoundImpl implements _DeviceNotFound {
     TResult Function()? checkDeviceLoading,
     TResult Function()? deviceNotFound,
     TResult Function()? deviceRegisLoading,
+    TResult Function()? webSocketSetupLoading,
     TResult Function()? waitActivation,
     TResult Function()? success,
     TResult Function(String message)? error,
@@ -456,6 +480,8 @@ class _$DeviceNotFoundImpl implements _DeviceNotFound {
     required TResult Function(_CheckDeviceLoading value) checkDeviceLoading,
     required TResult Function(_DeviceNotFound value) deviceNotFound,
     required TResult Function(_DeviceRegisLoading value) deviceRegisLoading,
+    required TResult Function(_WebSocketSetupLoading value)
+        webSocketSetupLoading,
     required TResult Function(_WaitActivation value) waitActivation,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
@@ -470,6 +496,7 @@ class _$DeviceNotFoundImpl implements _DeviceNotFound {
     TResult? Function(_CheckDeviceLoading value)? checkDeviceLoading,
     TResult? Function(_DeviceNotFound value)? deviceNotFound,
     TResult? Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult? Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
     TResult? Function(_WaitActivation value)? waitActivation,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
@@ -484,6 +511,7 @@ class _$DeviceNotFoundImpl implements _DeviceNotFound {
     TResult Function(_CheckDeviceLoading value)? checkDeviceLoading,
     TResult Function(_DeviceNotFound value)? deviceNotFound,
     TResult Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
     TResult Function(_WaitActivation value)? waitActivation,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
@@ -542,6 +570,7 @@ class _$DeviceRegisLoadingImpl implements _DeviceRegisLoading {
     required TResult Function() checkDeviceLoading,
     required TResult Function() deviceNotFound,
     required TResult Function() deviceRegisLoading,
+    required TResult Function() webSocketSetupLoading,
     required TResult Function() waitActivation,
     required TResult Function() success,
     required TResult Function(String message) error,
@@ -556,6 +585,7 @@ class _$DeviceRegisLoadingImpl implements _DeviceRegisLoading {
     TResult? Function()? checkDeviceLoading,
     TResult? Function()? deviceNotFound,
     TResult? Function()? deviceRegisLoading,
+    TResult? Function()? webSocketSetupLoading,
     TResult? Function()? waitActivation,
     TResult? Function()? success,
     TResult? Function(String message)? error,
@@ -570,6 +600,7 @@ class _$DeviceRegisLoadingImpl implements _DeviceRegisLoading {
     TResult Function()? checkDeviceLoading,
     TResult Function()? deviceNotFound,
     TResult Function()? deviceRegisLoading,
+    TResult Function()? webSocketSetupLoading,
     TResult Function()? waitActivation,
     TResult Function()? success,
     TResult Function(String message)? error,
@@ -588,6 +619,8 @@ class _$DeviceRegisLoadingImpl implements _DeviceRegisLoading {
     required TResult Function(_CheckDeviceLoading value) checkDeviceLoading,
     required TResult Function(_DeviceNotFound value) deviceNotFound,
     required TResult Function(_DeviceRegisLoading value) deviceRegisLoading,
+    required TResult Function(_WebSocketSetupLoading value)
+        webSocketSetupLoading,
     required TResult Function(_WaitActivation value) waitActivation,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
@@ -602,6 +635,7 @@ class _$DeviceRegisLoadingImpl implements _DeviceRegisLoading {
     TResult? Function(_CheckDeviceLoading value)? checkDeviceLoading,
     TResult? Function(_DeviceNotFound value)? deviceNotFound,
     TResult? Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult? Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
     TResult? Function(_WaitActivation value)? waitActivation,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
@@ -616,6 +650,7 @@ class _$DeviceRegisLoadingImpl implements _DeviceRegisLoading {
     TResult Function(_CheckDeviceLoading value)? checkDeviceLoading,
     TResult Function(_DeviceNotFound value)? deviceNotFound,
     TResult Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
     TResult Function(_WaitActivation value)? waitActivation,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
@@ -630,6 +665,147 @@ class _$DeviceRegisLoadingImpl implements _DeviceRegisLoading {
 
 abstract class _DeviceRegisLoading implements DeviceRegisState {
   const factory _DeviceRegisLoading() = _$DeviceRegisLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$WebSocketSetupLoadingImplCopyWith<$Res> {
+  factory _$$WebSocketSetupLoadingImplCopyWith(
+          _$WebSocketSetupLoadingImpl value,
+          $Res Function(_$WebSocketSetupLoadingImpl) then) =
+      __$$WebSocketSetupLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$WebSocketSetupLoadingImplCopyWithImpl<$Res>
+    extends _$DeviceRegisStateCopyWithImpl<$Res, _$WebSocketSetupLoadingImpl>
+    implements _$$WebSocketSetupLoadingImplCopyWith<$Res> {
+  __$$WebSocketSetupLoadingImplCopyWithImpl(_$WebSocketSetupLoadingImpl _value,
+      $Res Function(_$WebSocketSetupLoadingImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$WebSocketSetupLoadingImpl implements _WebSocketSetupLoading {
+  const _$WebSocketSetupLoadingImpl();
+
+  @override
+  String toString() {
+    return 'DeviceRegisState.webSocketSetupLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$WebSocketSetupLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() checkDeviceLoading,
+    required TResult Function() deviceNotFound,
+    required TResult Function() deviceRegisLoading,
+    required TResult Function() webSocketSetupLoading,
+    required TResult Function() waitActivation,
+    required TResult Function() success,
+    required TResult Function(String message) error,
+  }) {
+    return webSocketSetupLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? checkDeviceLoading,
+    TResult? Function()? deviceNotFound,
+    TResult? Function()? deviceRegisLoading,
+    TResult? Function()? webSocketSetupLoading,
+    TResult? Function()? waitActivation,
+    TResult? Function()? success,
+    TResult? Function(String message)? error,
+  }) {
+    return webSocketSetupLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? checkDeviceLoading,
+    TResult Function()? deviceNotFound,
+    TResult Function()? deviceRegisLoading,
+    TResult Function()? webSocketSetupLoading,
+    TResult Function()? waitActivation,
+    TResult Function()? success,
+    TResult Function(String message)? error,
+    required TResult orElse(),
+  }) {
+    if (webSocketSetupLoading != null) {
+      return webSocketSetupLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_CheckDeviceLoading value) checkDeviceLoading,
+    required TResult Function(_DeviceNotFound value) deviceNotFound,
+    required TResult Function(_DeviceRegisLoading value) deviceRegisLoading,
+    required TResult Function(_WebSocketSetupLoading value)
+        webSocketSetupLoading,
+    required TResult Function(_WaitActivation value) waitActivation,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
+  }) {
+    return webSocketSetupLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_CheckDeviceLoading value)? checkDeviceLoading,
+    TResult? Function(_DeviceNotFound value)? deviceNotFound,
+    TResult? Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult? Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
+    TResult? Function(_WaitActivation value)? waitActivation,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Error value)? error,
+  }) {
+    return webSocketSetupLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_CheckDeviceLoading value)? checkDeviceLoading,
+    TResult Function(_DeviceNotFound value)? deviceNotFound,
+    TResult Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
+    TResult Function(_WaitActivation value)? waitActivation,
+    TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (webSocketSetupLoading != null) {
+      return webSocketSetupLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _WebSocketSetupLoading implements DeviceRegisState {
+  const factory _WebSocketSetupLoading() = _$WebSocketSetupLoadingImpl;
 }
 
 /// @nodoc
@@ -674,6 +850,7 @@ class _$WaitActivationImpl implements _WaitActivation {
     required TResult Function() checkDeviceLoading,
     required TResult Function() deviceNotFound,
     required TResult Function() deviceRegisLoading,
+    required TResult Function() webSocketSetupLoading,
     required TResult Function() waitActivation,
     required TResult Function() success,
     required TResult Function(String message) error,
@@ -688,6 +865,7 @@ class _$WaitActivationImpl implements _WaitActivation {
     TResult? Function()? checkDeviceLoading,
     TResult? Function()? deviceNotFound,
     TResult? Function()? deviceRegisLoading,
+    TResult? Function()? webSocketSetupLoading,
     TResult? Function()? waitActivation,
     TResult? Function()? success,
     TResult? Function(String message)? error,
@@ -702,6 +880,7 @@ class _$WaitActivationImpl implements _WaitActivation {
     TResult Function()? checkDeviceLoading,
     TResult Function()? deviceNotFound,
     TResult Function()? deviceRegisLoading,
+    TResult Function()? webSocketSetupLoading,
     TResult Function()? waitActivation,
     TResult Function()? success,
     TResult Function(String message)? error,
@@ -720,6 +899,8 @@ class _$WaitActivationImpl implements _WaitActivation {
     required TResult Function(_CheckDeviceLoading value) checkDeviceLoading,
     required TResult Function(_DeviceNotFound value) deviceNotFound,
     required TResult Function(_DeviceRegisLoading value) deviceRegisLoading,
+    required TResult Function(_WebSocketSetupLoading value)
+        webSocketSetupLoading,
     required TResult Function(_WaitActivation value) waitActivation,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
@@ -734,6 +915,7 @@ class _$WaitActivationImpl implements _WaitActivation {
     TResult? Function(_CheckDeviceLoading value)? checkDeviceLoading,
     TResult? Function(_DeviceNotFound value)? deviceNotFound,
     TResult? Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult? Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
     TResult? Function(_WaitActivation value)? waitActivation,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
@@ -748,6 +930,7 @@ class _$WaitActivationImpl implements _WaitActivation {
     TResult Function(_CheckDeviceLoading value)? checkDeviceLoading,
     TResult Function(_DeviceNotFound value)? deviceNotFound,
     TResult Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
     TResult Function(_WaitActivation value)? waitActivation,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
@@ -806,6 +989,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function() checkDeviceLoading,
     required TResult Function() deviceNotFound,
     required TResult Function() deviceRegisLoading,
+    required TResult Function() webSocketSetupLoading,
     required TResult Function() waitActivation,
     required TResult Function() success,
     required TResult Function(String message) error,
@@ -820,6 +1004,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function()? checkDeviceLoading,
     TResult? Function()? deviceNotFound,
     TResult? Function()? deviceRegisLoading,
+    TResult? Function()? webSocketSetupLoading,
     TResult? Function()? waitActivation,
     TResult? Function()? success,
     TResult? Function(String message)? error,
@@ -834,6 +1019,7 @@ class _$SuccessImpl implements _Success {
     TResult Function()? checkDeviceLoading,
     TResult Function()? deviceNotFound,
     TResult Function()? deviceRegisLoading,
+    TResult Function()? webSocketSetupLoading,
     TResult Function()? waitActivation,
     TResult Function()? success,
     TResult Function(String message)? error,
@@ -852,6 +1038,8 @@ class _$SuccessImpl implements _Success {
     required TResult Function(_CheckDeviceLoading value) checkDeviceLoading,
     required TResult Function(_DeviceNotFound value) deviceNotFound,
     required TResult Function(_DeviceRegisLoading value) deviceRegisLoading,
+    required TResult Function(_WebSocketSetupLoading value)
+        webSocketSetupLoading,
     required TResult Function(_WaitActivation value) waitActivation,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
@@ -866,6 +1054,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function(_CheckDeviceLoading value)? checkDeviceLoading,
     TResult? Function(_DeviceNotFound value)? deviceNotFound,
     TResult? Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult? Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
     TResult? Function(_WaitActivation value)? waitActivation,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
@@ -880,6 +1069,7 @@ class _$SuccessImpl implements _Success {
     TResult Function(_CheckDeviceLoading value)? checkDeviceLoading,
     TResult Function(_DeviceNotFound value)? deviceNotFound,
     TResult Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
     TResult Function(_WaitActivation value)? waitActivation,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
@@ -964,6 +1154,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function() checkDeviceLoading,
     required TResult Function() deviceNotFound,
     required TResult Function() deviceRegisLoading,
+    required TResult Function() webSocketSetupLoading,
     required TResult Function() waitActivation,
     required TResult Function() success,
     required TResult Function(String message) error,
@@ -978,6 +1169,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function()? checkDeviceLoading,
     TResult? Function()? deviceNotFound,
     TResult? Function()? deviceRegisLoading,
+    TResult? Function()? webSocketSetupLoading,
     TResult? Function()? waitActivation,
     TResult? Function()? success,
     TResult? Function(String message)? error,
@@ -992,6 +1184,7 @@ class _$ErrorImpl implements _Error {
     TResult Function()? checkDeviceLoading,
     TResult Function()? deviceNotFound,
     TResult Function()? deviceRegisLoading,
+    TResult Function()? webSocketSetupLoading,
     TResult Function()? waitActivation,
     TResult Function()? success,
     TResult Function(String message)? error,
@@ -1010,6 +1203,8 @@ class _$ErrorImpl implements _Error {
     required TResult Function(_CheckDeviceLoading value) checkDeviceLoading,
     required TResult Function(_DeviceNotFound value) deviceNotFound,
     required TResult Function(_DeviceRegisLoading value) deviceRegisLoading,
+    required TResult Function(_WebSocketSetupLoading value)
+        webSocketSetupLoading,
     required TResult Function(_WaitActivation value) waitActivation,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
@@ -1024,6 +1219,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function(_CheckDeviceLoading value)? checkDeviceLoading,
     TResult? Function(_DeviceNotFound value)? deviceNotFound,
     TResult? Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult? Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
     TResult? Function(_WaitActivation value)? waitActivation,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
@@ -1038,6 +1234,7 @@ class _$ErrorImpl implements _Error {
     TResult Function(_CheckDeviceLoading value)? checkDeviceLoading,
     TResult Function(_DeviceNotFound value)? deviceNotFound,
     TResult Function(_DeviceRegisLoading value)? deviceRegisLoading,
+    TResult Function(_WebSocketSetupLoading value)? webSocketSetupLoading,
     TResult Function(_WaitActivation value)? waitActivation,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,

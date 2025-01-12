@@ -28,15 +28,15 @@ run this to generate riverpod,getx, and freezed code
 
 # Task
 - [ ] Slicing UI
-    - [ ] Register device wizard
-        - [ ] Progress bar state
-        - [ ] Waiting for activation state
-    - [ ] Login
+    - [x] Register device wizard
+        - [x] Progress bar state
+        - [x] Waiting for activation state
+    - [x] Login
         - [x] Login form normal state
         - [x] Login form error state
         - [x] Login form success state
     - [ ] Home/dashboard page
-        - [ ] Top status bar
+        - [ ] Top status bar 
         - [ ] Machine indicator display
         - [ ] Activity drawer
         - [ ] Bottom navigation and emergency button
@@ -46,10 +46,17 @@ run this to generate riverpod,getx, and freezed code
         - [ ] Setup API call using Dio and intercept using Alice
         - [ ] Setup generic api response
     - [ ] Register device wizard
-        - [ ] Check device registration status
-        - [ ] Connect  and subscribe to the WebSocket device channel
-        - [ ] API integration for device registration
-        - [ ] Handle navigation to Waiting Activation Page based on device status in API and Websocket data
-        - [ ] Handle navigation to Login Page based on status in API and Websocket data
+        - [x] Check device registration status
+        - [x] Handle navigation if device already registered but not login
+        - [ ] Handle navigation if device already registered and already login
+        - [x] Connect and subscribe to the WebSocket device channel
+        - [x] API integration for device registration
+        - [x] Handle navigation to Waiting Activation Page based on device status in API and Websocket data
+        - [x] Handle navigation to Login Page based on status in API and Websocket data
     - [ ] Login
         - [ ] API integration for login
+    - [ ] Dashboard
+        - [ ] API integration for message
+        - [ ] Websocket connection for chat
+        - [ ] Change activity using drawer
+        - [ ] Implement map

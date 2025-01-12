@@ -4,5 +4,5 @@ class Endpoints {
   static const int receiveTimeout = 15000;
   static const int connectionTimeout = 30000;
 
-  // booking endpoints
+  static const String websocketUrl = 'wss://wss.apps-madhani.com/connection/websocket';
 }

@@ -39,7 +39,7 @@ dependencies:
   injectable: ^2.1.2
   get_it: ^7.6.0
   get_storage: ^2.1.1
-  go_router: ^14.0.2
+  go_router: ^14.6.3
   getwidget: ^5.0.0
   tailwind_colors: ^0.3.1
   freezed: ^2.3.3
@@ -48,6 +48,9 @@ dependencies:
   alice_dio: ^1.0.4
   flutter_fullscreen: ^1.1.0
   flutter_svg: ^2.0.17
+  centrifuge: ^0.8.0
+  hooks_riverpod: ^2.6.1
+  flutter_hooks: ^0.20.5
 
 
   # The following adds the Cupertino Icons font to your application.

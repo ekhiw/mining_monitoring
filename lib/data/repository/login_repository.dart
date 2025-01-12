@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mining_monitoring/constants/endpoints.dart';
 
-import '../model/api_error_response.dart';
+import '../model/responses/api_error_response.dart';
 
 @injectable
 class LoginRepository {

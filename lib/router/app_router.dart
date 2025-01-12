@@ -36,15 +36,16 @@ final GlobalKey<NavigatorState> _registerNavigatorKey =
 class SGGoRouter {
   final GoRouter goRoute = GoRouter(
     navigatorKey: _rootNavigatorKey,
-    initialLocation: SGRoute.home.route,
+    initialLocation: SGRoute.register_device.route,
     routes:<RouteBase>[ StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
           return Scaffold(
-              appBar: AppBar(
-                backgroundColor:TWColors.gray.shade900,
-                title: AppBarWidget(),
-              ),
-              body: navigationShell,
+            resizeToAvoidBottomInset: true,
+            appBar: AppBar(
+              backgroundColor:TWColors.gray.shade900,
+              title: AppBarWidget(),
+            ),
+            body: navigationShell,
           );
         },
         branches: <StatefulShellBranch>[
@@ -52,6 +53,7 @@ class SGGoRouter {
             navigatorKey: _homeNavigatorKey,
             routes: <RouteBase>[
               GoRoute(
+                name: "home",
                 path: SGRoute.home.route,
                 builder: (BuildContext context, GoRouterState state) =>
                 const HomeScreen(),
@@ -87,7 +89,9 @@ class SGGoRouter {
 
 final String? Function(BuildContext context, GoRouterState state) _authGuard =
     (BuildContext context, GoRouterState state) {
-  if (!(getStoreHelper.getNik() != null)) {
+  print('EKHIWWWWW GET NIK ${getStoreHelper.getNik()} ${state.uri} ${state.fullPath} ${state.topRoute} ${state.name}');
+
+  if (!(getStoreHelper.getNik() != null) && state.fullPath != SGRoute.register_device.route) {
     return SGRoute.login.route;
   }
   return null;

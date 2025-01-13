@@ -20,7 +20,7 @@ mixin _$LoginState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String nik) success,
+    required TResult Function(UserResponseDataEntity userData) success,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$LoginState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String nik)? success,
+    TResult? Function(UserResponseDataEntity userData)? success,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$LoginState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String nik)? success,
+    TResult Function(UserResponseDataEntity userData)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -126,7 +126,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String nik) success,
+    required TResult Function(UserResponseDataEntity userData) success,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -137,7 +137,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String nik)? success,
+    TResult? Function(UserResponseDataEntity userData)? success,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -148,7 +148,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String nik)? success,
+    TResult Function(UserResponseDataEntity userData)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -240,7 +240,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String nik) success,
+    required TResult Function(UserResponseDataEntity userData) success,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -251,7 +251,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String nik)? success,
+    TResult? Function(UserResponseDataEntity userData)? success,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -262,7 +262,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String nik)? success,
+    TResult Function(UserResponseDataEntity userData)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -320,7 +320,9 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String nik});
+  $Res call({UserResponseDataEntity userData});
+
+  $UserResponseDataEntityCopyWith<$Res> get userData;
 }
 
 /// @nodoc
@@ -334,28 +336,36 @@ class __$$SuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? nik = null,
+    Object? userData = null,
   }) {
     return _then(_$SuccessImpl(
-      null == nik
-          ? _value.nik
-          : nik // ignore: cast_nullable_to_non_nullable
-              as String,
+      null == userData
+          ? _value.userData
+          : userData // ignore: cast_nullable_to_non_nullable
+              as UserResponseDataEntity,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserResponseDataEntityCopyWith<$Res> get userData {
+    return $UserResponseDataEntityCopyWith<$Res>(_value.userData, (value) {
+      return _then(_value.copyWith(userData: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$SuccessImpl implements _Success {
-  const _$SuccessImpl(this.nik);
+  const _$SuccessImpl(this.userData);
 
   @override
-  final String nik;
+  final UserResponseDataEntity userData;
 
   @override
   String toString() {
-    return 'LoginState.success(nik: $nik)';
+    return 'LoginState.success(userData: $userData)';
   }
 
   @override
@@ -363,11 +373,12 @@ class _$SuccessImpl implements _Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessImpl &&
-            (identical(other.nik, nik) || other.nik == nik));
+            (identical(other.userData, userData) ||
+                other.userData == userData));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, nik);
+  int get hashCode => Object.hash(runtimeType, userData);
 
   @JsonKey(ignore: true)
   @override
@@ -380,10 +391,10 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String nik) success,
+    required TResult Function(UserResponseDataEntity userData) success,
     required TResult Function(String message) error,
   }) {
-    return success(nik);
+    return success(userData);
   }
 
   @override
@@ -391,10 +402,10 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String nik)? success,
+    TResult? Function(UserResponseDataEntity userData)? success,
     TResult? Function(String message)? error,
   }) {
-    return success?.call(nik);
+    return success?.call(userData);
   }
 
   @override
@@ -402,12 +413,12 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String nik)? success,
+    TResult Function(UserResponseDataEntity userData)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(nik);
+      return success(userData);
     }
     return orElse();
   }
@@ -451,9 +462,9 @@ class _$SuccessImpl implements _Success {
 }
 
 abstract class _Success implements LoginState {
-  const factory _Success(final String nik) = _$SuccessImpl;
+  const factory _Success(final UserResponseDataEntity userData) = _$SuccessImpl;
 
-  String get nik;
+  UserResponseDataEntity get userData;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -525,7 +536,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(String nik) success,
+    required TResult Function(UserResponseDataEntity userData) success,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -536,7 +547,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(String nik)? success,
+    TResult? Function(UserResponseDataEntity userData)? success,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -547,7 +558,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(String nik)? success,
+    TResult Function(UserResponseDataEntity userData)? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {

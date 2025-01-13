@@ -2,14 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:mining_monitoring/pages/login/login_result.dart';
-import 'package:tailwind_colors/tailwind_colors.dart';
 
-import '../../data/store/user_store.dart';
-import '../../di/component/service_locator.dart';
 import '../../di/providers/login_provider.dart';
 import 'login_form.dart';
-
-GetUserStoreHelper getStoreHelper = getIt<GetUserStoreHelper>();
 
 class LoginScreen extends ConsumerWidget {
   const LoginScreen({super.key});
@@ -33,13 +28,12 @@ class LoginScreen extends ConsumerWidget {
                   height: screenWidth *0.28
               ),
               child: loginState.maybeWhen(
-                success: (nik) {
-                  getStoreHelper.saveNik(nik);
-
+                success: (data) {
+                  // TODO pass model as parameter
                   return LoginResult(
-                    avatarImageUrl: "https://i.pravatar.cc/400?u=1",
-                    name: "Fulan Fulanah",
-                    position: "Operator",
+                    avatarImageUrl: data.imageUrl,
+                    name: data.name,
+                    position: data.roleName,
                   );
                 },
                 orElse: () => const LoginForm(),

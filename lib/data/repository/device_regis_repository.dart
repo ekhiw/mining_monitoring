@@ -12,7 +12,7 @@ class DeviceRegisRepository {
 
   Future<dynamic> checkDeviceId(String deviceId) async {
     try {
-      Response response = await _dio.get("/equipments/devices/${deviceId}");
+      Response response = await _dio.get("${Endpoints.checkDeviceById}${deviceId}");
       print(response.data.toString());
 
       if (response.statusCode == 200) {
@@ -27,8 +27,8 @@ class DeviceRegisRepository {
 
   Future<dynamic> registerDeviceId(String deviceId) async {
     try {
-      Response response = await _dio.post(
-          "/equipments/devices/",
+      // TODO change to request model
+      Response response = await _dio.post(Endpoints.checkDeviceById,
         data: {
           "id": deviceId,
           "head_unit_sn" : deviceId

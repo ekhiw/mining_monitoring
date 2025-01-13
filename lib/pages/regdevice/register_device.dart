@@ -201,10 +201,10 @@ class RegisterDeviceScreen extends HookConsumerWidget {
                           context.go(SGRoute.home.route);
                         });
 
-                        return SizedBox();
+                        return loadingProgress(100);
                       },
                       orElse: () {
-                        return SizedBox();
+                        return loadingProgress(0);
                       }),
                   Expanded(child: SizedBox()),
                   Text(

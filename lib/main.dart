@@ -24,7 +24,7 @@ void setupDependencies() {
 void main() async {
 
   setupDependencies();
-  await GetStorage.init();
+  await GetStorage.init("myStorage");
   await getIt.allReady();
 
   await FullScreen.ensureInitialized();

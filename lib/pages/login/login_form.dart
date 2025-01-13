@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:mining_monitoring/data/model/responses/user_response_entity.dart';
 import 'package:tailwind_colors/tailwind_colors.dart';
 
 import '../../di/providers/login_provider.dart';
@@ -43,13 +44,12 @@ class LoginForm extends ConsumerWidget {
                 ),
                 TextField(
                   controller: _nikController,
-                  keyboardType: TextInputType.numberWithOptions(),
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Enter NIK',
                   ),
                 ),
-                loginState.when(
+                loginState.maybeWhen(
                   error: (err) => Text(
                     err,
                     style: TextStyle(
@@ -58,7 +58,7 @@ class LoginForm extends ConsumerWidget {
                         color: TWColors.red.shade500
                     ),
                   ),
-                  initial: () => SizedBox(), loading: () => SizedBox(), success: (String nik) => SizedBox(),
+                  orElse: () => SizedBox(),
                 ),
                 GFButton(
                   size: 50,

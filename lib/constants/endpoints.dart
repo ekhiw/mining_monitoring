@@ -5,4 +5,7 @@ class Endpoints {
   static const int connectionTimeout = 30000;
 
   static const String websocketUrl = 'wss://wss.apps-madhani.com/connection/websocket';
+
+  static const String tabletLogin = '/login-tablet-unit';
+  static const String checkDeviceById = '/equipments/devices/';
 }

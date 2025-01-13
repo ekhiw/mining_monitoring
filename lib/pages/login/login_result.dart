@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:getwidget/getwidget.dart';
+import 'package:go_router/go_router.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:mining_monitoring/router/app_router.dart';
 import 'package:tailwind_colors/tailwind_colors.dart';
 
-class LoginResult extends ConsumerWidget {
+class LoginResult extends HookConsumerWidget {
   const LoginResult({
     required this.avatarImageUrl,
     required this.name,
@@ -18,6 +22,13 @@ class LoginResult extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+
+    useEffect(() {
+      Future.delayed(Duration(seconds: 2), () {
+        context.go(SGRoute.home.route);
+      });
+      return null;
+    },const []);
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,

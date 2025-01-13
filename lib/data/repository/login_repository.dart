@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mining_monitoring/constants/endpoints.dart';
+import 'package:mining_monitoring/data/model/responses/user_response_entity.dart';
 
 import '../model/responses/api_error_response.dart';
 
@@ -11,9 +12,19 @@ class LoginRepository {
 
   Future<dynamic> login(String nik) async {
     try {
-      final response = await _dio.get("/equipments/devices/${nik}");
+      // TODO change to request model
+      final response = await _dio.post(Endpoints.tabletLogin, data: {
+        "unit_id": 'e676e18f12',
+        "nik": nik,
+        "shift_id": '048C-NS',
+        "login_type": 1
+      });
 
-      return response;
+      if (response.statusCode == 200) {
+        return UserResponseEntity.fromJson(response.data);
+      } else {
+        return UserResponseEntity.fromJson(response.data);
+      }
     } on DioException catch (e) {
       return ApiErrorResponse.fromJson(e.response?.data);
     }

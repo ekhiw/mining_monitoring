@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mining_monitoring/data/model/login_state.dart';
+import 'package:mining_monitoring/data/model/state/login_state.dart';
 import 'package:mining_monitoring/data/model/responses/user_response_entity.dart';
 import 'package:mining_monitoring/data/repository/login_repository.dart';
 

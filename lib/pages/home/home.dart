@@ -6,6 +6,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:getwidget/getwidget.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mining_monitoring/pages/home/message_dialog.dart';
+import 'package:mining_monitoring/pages/home/message_fullscreen.dart';
 import 'package:tailwind_colors/tailwind_colors.dart';
 
 import '../../constants/strings.dart';
@@ -418,7 +419,7 @@ class HomeScreen extends HookConsumerWidget {
     useEffect(() {
       ref.watch(chatNotifierProvider.notifier).initConnection("ws/fms-dev/monitoring/messages/equipments/${Strings.unitId}",(data){
         print("EKHIW CONNECT CALLBACK $data");
-        if (!ref.read(chatNotifierProvider).isDialogOpen) {
+        if (!ref.read(chatNotifierProvider).isDialogOpen && !ref.read(chatNotifierProvider).isMessageFullscreen) {
           showDialog(
             barrierDismissible: false,
             context: context,
@@ -444,7 +445,7 @@ class HomeScreen extends HookConsumerWidget {
             children: [
               Container(
                 width: screenWidth,
-                height: screenHeight * 0.8,
+                height: (screenHeight * 0.85)-8,
                 child:TabBarView(
                     controller: _tabController,
                     children: [
@@ -453,7 +454,13 @@ class HomeScreen extends HookConsumerWidget {
                           Scaffold.of(context).openEndDrawer();
                         });
                       }),
-                      Center(child: Text("data"),)
+                      MessageFullscreen(
+                        onBackBtnPressed: () {
+                          _tabController.animateTo(0);
+                          ref.read(chatNotifierProvider.notifier).setMessageIsFullscreen(false);
+
+                        },
+                      )
                     ]),
               ),
               const SizedBox(height: 8),
@@ -502,6 +509,7 @@ class HomeScreen extends HookConsumerWidget {
                         GFIconButton(
                           onPressed: (){
                             _tabController.animateTo(1);
+                            ref.read(chatNotifierProvider.notifier).setMessageIsFullscreen(true);
                           },
                           color: _tabController.index == 1 ?TW3Colors.blue:Colors.transparent,
                           icon: Icon(Icons.email_outlined,
@@ -511,6 +519,7 @@ class HomeScreen extends HookConsumerWidget {
                         GFIconButton(
                           onPressed: (){
                             _tabController.animateTo(0);
+                            ref.read(chatNotifierProvider.notifier).setMessageIsFullscreen(false);
                           },
                           color: _tabController.index == 0 ?TW3Colors.blue:Colors.transparent,
                           icon: Icon(Icons.menu_rounded,

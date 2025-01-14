@@ -8,4 +8,7 @@ class Endpoints {
 
   static const String tabletLogin = '/login-tablet-unit';
   static const String checkDeviceById = '/equipments/devices/';
+  static const String getAllMessages = '/monitoring/messages';
+  static const String getTemplateMessages = '/monitoring/subjects';
+  static const String sendMessage = '/monitoring/messages';
 }

@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mining_monitoring/data/model/responses/api_error_response.dart';
-import 'package:mining_monitoring/data/model/device_regis_state.dart';
-import 'package:mining_monitoring/data/model/login_state.dart';
+import 'package:mining_monitoring/data/model/state/device_regis_state.dart';
+import 'package:mining_monitoring/data/model/state/login_state.dart';
 import 'package:mining_monitoring/data/repository/device_regis_repository.dart';
 import 'package:mining_monitoring/data/repository/login_repository.dart';
 

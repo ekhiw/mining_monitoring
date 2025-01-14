@@ -15,6 +15,7 @@ import 'package:injectable/injectable.dart' as _i526;
 
 import '../../data/repository/device_regis_repository.dart' as _i788;
 import '../../data/repository/login_repository.dart' as _i1019;
+import '../../data/repository/message_respository.dart' as _i122;
 import '../../data/store/user_store.dart' as _i113;
 import '../../router/app_router.dart' as _i630;
 
@@ -32,6 +33,8 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i630.SGGoRouter>(() => _i630.SGGoRouter());
     gh.factory<_i1019.LoginRepository>(
         () => _i1019.LoginRepository(gh<_i361.Dio>()));
+    gh.factory<_i122.MessageRespository>(
+        () => _i122.MessageRespository(gh<_i361.Dio>()));
     gh.factory<_i788.DeviceRegisRepository>(
         () => _i788.DeviceRegisRepository(gh<_i361.Dio>()));
     gh.factory<_i113.GetUserStoreHelper>(

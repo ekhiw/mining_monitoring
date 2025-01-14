@@ -42,7 +42,7 @@ class MessageDialog extends HookConsumerWidget {
       child: Container(
         height: screenHeight * 0.8,
         decoration: BoxDecoration(
-          color: Colors.grey[800],
+          color: TW3Colors.gray.shade800,
           borderRadius: BorderRadius.circular(8),
         ),
         padding: const EdgeInsets.all(16),
@@ -81,7 +81,9 @@ class MessageDialog extends HookConsumerWidget {
                       isMe: isMe,
                       senderName: message.senderName,
                       message: message.message,
-                      sendAt: message.createdAt);
+                      sendAt: message.createdAt,
+                    isFullWidth: true,
+                  );
                 },
               )
             ),

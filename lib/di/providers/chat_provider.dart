@@ -6,8 +6,8 @@ import 'package:mining_monitoring/constants/endpoints.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:centrifuge/centrifuge.dart';
 
-import '../../data/model/chat_message.dart';
 import '../../data/model/chat_state.dart';
+import '../../data/model/websocket_message_entity.dart';
 
 part 'chat_provider.g.dart';
 
@@ -39,7 +39,7 @@ class ChatNotifier extends _$ChatNotifier {
 
   }
 
-  Future<void> _initializeSubscription(String channel,ValueSetter<String> onConnect) async {
+  Future<void> _initializeSubscription(String channel,ValueSetter<String> callback) async {
     // state = state.copyWith(isLoading: true);
 
     try {
@@ -65,7 +65,8 @@ class ChatNotifier extends _$ChatNotifier {
         final d = json.decode(data) as Map<String, dynamic>;
         final id = d["id"].toString();
         final is_active = d["is_active"].toString();
-        onConnect(data);
+        _addMessage(WebsocketMessageEntity.fromJson(d));
+        callback(data);
       });
 
       subscription.joinStream.listen(print);
@@ -86,7 +87,7 @@ class ChatNotifier extends _$ChatNotifier {
     }
   }
 
-  void _addMessage(ChatMessage message) {
+  void _addMessage(WebsocketMessageEntity message) {
     state = state.copyWith(
       messages: [...state.messages, message],
     );
@@ -98,20 +99,26 @@ class ChatNotifier extends _$ChatNotifier {
   }
 
   Future<void> sendMessage(String text) async {
-    if (_subscription == null) return;
+    // if (_subscription == null) return;
+    //
+    // final message = ChatMessage(
+    //   message: text,
+    //   sender_nik: 'User',
+    //   created_at: DateTime.now(),
+    // );
+    //
+    // try {
+    //   final data = utf8.encode(jsonEncode({'input': message}));
+    //   await _subscription!.publish(data);
+    // } catch (e) {
+    //   state = state.copyWith(error: e.toString());
+    // }
+  }
 
-    final message = ChatMessage(
-      message: text,
-      sender_nik: 'User',
-      created_at: DateTime.now(),
+  void setIsDialogOpen(bool isOpen) {
+    state = state.copyWith(
+      isDialogOpen: isOpen
     );
-
-    try {
-      final data = utf8.encode(jsonEncode({'input': message}));
-      await _subscription!.publish(data);
-    } catch (e) {
-      state = state.copyWith(error: e.toString());
-    }
   }
 
   void _dispose() {

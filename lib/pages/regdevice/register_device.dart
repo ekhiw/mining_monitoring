@@ -22,7 +22,7 @@ final deviceId = Strings.deviceId;
 class RegisterDeviceScreen extends HookConsumerWidget {
   const RegisterDeviceScreen({super.key});
 
-  Widget loadingProgress(int progress) {
+  Widget _LoadingProgress(int progress) {
 
     return Column(
       children: [
@@ -52,7 +52,7 @@ class RegisterDeviceScreen extends HookConsumerWidget {
     );
   }
 
-  Widget waitingWidget(String serialNum) {
+  Widget _WaitingWidget(String serialNum) {
 
 
     return Column(
@@ -168,16 +168,16 @@ class RegisterDeviceScreen extends HookConsumerWidget {
                   Expanded(child: SizedBox()),
                   deviceRegisState.maybeWhen(
                       initial: () {
-                        return loadingProgress(0);
+                        return _LoadingProgress(0);
                       },
                       checkDeviceLoading: () {
-                        return loadingProgress(50);
+                        return _LoadingProgress(50);
                       },
                       deviceNotFound: () {
                         Future.delayed(Duration(seconds: 1)).then((_) {
                           ref.watch(deviceRegisStateProvider.notifier).regisDeviceId(deviceId);
                         });
-                        return loadingProgress(80);
+                        return _LoadingProgress(80);
                       },
                       webSocketSetupLoading: () {
                         try {
@@ -191,20 +191,20 @@ class RegisterDeviceScreen extends HookConsumerWidget {
                         } catch (e) {
                           print(e);
                         }
-                        return loadingProgress(100);
+                        return _LoadingProgress(100);
                       },
                       waitActivation: () {
-                        return waitingWidget(deviceId);
+                        return _WaitingWidget(deviceId);
                       },
                       success: () {
                         Future.delayed(Duration(seconds: 1)).then((_) {
                           context.go(SGRoute.home.route);
                         });
 
-                        return loadingProgress(100);
+                        return _LoadingProgress(100);
                       },
                       orElse: () {
-                        return loadingProgress(0);
+                        return _LoadingProgress(0);
                       }),
                   Expanded(child: SizedBox()),
                   Text(

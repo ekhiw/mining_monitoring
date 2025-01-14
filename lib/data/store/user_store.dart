@@ -5,6 +5,8 @@ import 'package:mining_monitoring/data/model/responses/user_response_entity.dart
 const String nikKey = 'nik';
 const String avatarKey = 'ava';
 const String nameKey = 'name';
+const String unitIdKey = 'unitId';
+const String unitCodeKey = 'unitCode';
 
 @injectable
 class GetUserStoreHelper {
@@ -19,6 +21,8 @@ class GetUserStoreHelper {
     await getStorage.write(nikKey, data.id);
     await getStorage.write(avatarKey, data.imageUrl);
     await getStorage.write(nameKey, data.name);
+    await getStorage.write(unitIdKey, data.unitId);
+    await getStorage.write(unitCodeKey, data.unitCode);
   }
 
   String? getNik() {
@@ -31,6 +35,14 @@ class GetUserStoreHelper {
 
   String? getName() {
     return getStorage.read(nameKey);
+  }
+
+  String? getUnitId() {
+    return getStorage.read(unitIdKey);
+  }
+
+  String? getUnitCode() {
+    return getStorage.read(unitCodeKey);
   }
 
   void clear() {

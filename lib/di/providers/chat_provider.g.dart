@@ -21,7 +21,7 @@ final centrifugeClientProvider = AutoDisposeProvider<Client>.internal(
 );
 
 typedef CentrifugeClientRef = AutoDisposeProviderRef<Client>;
-String _$chatNotifierHash() => r'113cf77ad1b16dcca18fc81a4971c4c431c03265';
+String _$chatNotifierHash() => r'87951b62442148811e3ca28012fc997fd9008405';
 
 /// See also [ChatNotifier].
 @ProviderFor(ChatNotifier)

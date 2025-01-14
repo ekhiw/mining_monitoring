@@ -28,7 +28,7 @@ class AppBarWidget extends ConsumerWidget {
         padding: EdgeInsets.only(left: 8),
         child: Row(spacing: 12, children: [
           Text(
-            "Test",
+            "${getStoreHelper.getUnitCode() != null ? getStoreHelper.getUnitCode() : ""}",
             style: TextStyle(color: Colors.white),
           ),
           Text(

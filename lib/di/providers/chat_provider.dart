@@ -199,7 +199,7 @@ class ChatNotifier extends _$ChatNotifier {
         final templateMessage = response.data;
 
         state = state.copyWith(
-          templateMessages: [...state.templateMessages, ...templateMessage],
+          templateMessages: templateMessage,
         );
       } else {
         state = state.copyWith(

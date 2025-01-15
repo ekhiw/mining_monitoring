@@ -23,12 +23,11 @@ class LoginNotifier extends StateNotifier<LoginState> {
 
   LoginNotifier(this.loginRepository) : super(const LoginState.initial());
 
-  Future<void> login(String nik,{String? unitId=Strings.unitId, String? shiftId='048C-NS' }) async {
+  Future<void> login(String nik,{String? unitId, String? shiftId='048C-NS' }) async {
     state = const LoginState.loading();
 
     if (unitId == null) {
-      state = const LoginState.error('UnitId cannot be empty');
-      return;
+      unitId = Strings.unitId;
     }
 
     if (nik.isEmpty) {

@@ -24,55 +24,55 @@ mixin _$WebsocketMessageEntity {
   String get id => throw _privateConstructorUsedError;
   set id(String value) => throw _privateConstructorUsedError;
   @JsonKey(name: 'equipment_id')
-  String get equipmentId => throw _privateConstructorUsedError;
+  String? get equipmentId => throw _privateConstructorUsedError;
   @JsonKey(name: 'equipment_id')
-  set equipmentId(String value) => throw _privateConstructorUsedError;
+  set equipmentId(String? value) => throw _privateConstructorUsedError;
   @JsonKey(name: 'sender_nik')
-  String get senderNik => throw _privateConstructorUsedError;
+  String? get senderNik => throw _privateConstructorUsedError;
   @JsonKey(name: 'sender_nik')
-  set senderNik(String value) => throw _privateConstructorUsedError;
+  set senderNik(String? value) => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_read')
-  bool get isRead => throw _privateConstructorUsedError;
+  bool? get isRead => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_read')
-  set isRead(bool value) => throw _privateConstructorUsedError;
-  String get message => throw _privateConstructorUsedError;
-  set message(String value) => throw _privateConstructorUsedError;
+  set isRead(bool? value) => throw _privateConstructorUsedError;
+  String? get message => throw _privateConstructorUsedError;
+  set message(String? value) => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
-  String get createdAt => throw _privateConstructorUsedError;
+  String? get createdAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
-  set createdAt(String value) => throw _privateConstructorUsedError;
+  set createdAt(String? value) => throw _privateConstructorUsedError;
   @JsonKey(name: 'updated_at')
-  String get updatedAt => throw _privateConstructorUsedError;
+  String? get updatedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'updated_at')
-  set updatedAt(String value) => throw _privateConstructorUsedError;
+  set updatedAt(String? value) => throw _privateConstructorUsedError;
   @JsonKey(name: 'sender_name')
-  String get senderName => throw _privateConstructorUsedError;
+  String? get senderName => throw _privateConstructorUsedError;
   @JsonKey(name: 'sender_name')
-  set senderName(String value) => throw _privateConstructorUsedError;
+  set senderName(String? value) => throw _privateConstructorUsedError;
   @JsonKey(name: 'device_type')
-  String get deviceType => throw _privateConstructorUsedError;
+  String? get deviceType => throw _privateConstructorUsedError;
   @JsonKey(name: 'device_type')
-  set deviceType(String value) => throw _privateConstructorUsedError;
+  set deviceType(String? value) => throw _privateConstructorUsedError;
   @JsonKey(name: 'category_id')
-  String get categoryId => throw _privateConstructorUsedError;
+  String? get categoryId => throw _privateConstructorUsedError;
   @JsonKey(name: 'category_id')
-  set categoryId(String value) => throw _privateConstructorUsedError;
+  set categoryId(String? value) => throw _privateConstructorUsedError;
   @JsonKey(name: 'equipment_code')
-  String get equipmentCode => throw _privateConstructorUsedError;
+  String? get equipmentCode => throw _privateConstructorUsedError;
   @JsonKey(name: 'equipment_code')
-  set equipmentCode(String value) => throw _privateConstructorUsedError;
+  set equipmentCode(String? value) => throw _privateConstructorUsedError;
   @JsonKey(name: 'fleet_id')
   dynamic get fleetId => throw _privateConstructorUsedError;
   @JsonKey(name: 'fleet_id')
   set fleetId(dynamic value) => throw _privateConstructorUsedError;
   @JsonKey(name: 'equipment_site_id')
-  String get equipmentSiteId => throw _privateConstructorUsedError;
+  String? get equipmentSiteId => throw _privateConstructorUsedError;
   @JsonKey(name: 'equipment_site_id')
-  set equipmentSiteId(String value) => throw _privateConstructorUsedError;
+  set equipmentSiteId(String? value) => throw _privateConstructorUsedError;
   @JsonKey(name: 'category_name')
-  String get categoryName => throw _privateConstructorUsedError;
+  String? get categoryName => throw _privateConstructorUsedError;
   @JsonKey(name: 'category_name')
-  set categoryName(String value) => throw _privateConstructorUsedError;
+  set categoryName(String? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -88,19 +88,19 @@ abstract class $WebsocketMessageEntityCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      @JsonKey(name: 'equipment_id') String equipmentId,
-      @JsonKey(name: 'sender_nik') String senderNik,
-      @JsonKey(name: 'is_read') bool isRead,
-      String message,
-      @JsonKey(name: 'created_at') String createdAt,
-      @JsonKey(name: 'updated_at') String updatedAt,
-      @JsonKey(name: 'sender_name') String senderName,
-      @JsonKey(name: 'device_type') String deviceType,
-      @JsonKey(name: 'category_id') String categoryId,
-      @JsonKey(name: 'equipment_code') String equipmentCode,
+      @JsonKey(name: 'equipment_id') String? equipmentId,
+      @JsonKey(name: 'sender_nik') String? senderNik,
+      @JsonKey(name: 'is_read') bool? isRead,
+      String? message,
+      @JsonKey(name: 'created_at') String? createdAt,
+      @JsonKey(name: 'updated_at') String? updatedAt,
+      @JsonKey(name: 'sender_name') String? senderName,
+      @JsonKey(name: 'device_type') String? deviceType,
+      @JsonKey(name: 'category_id') String? categoryId,
+      @JsonKey(name: 'equipment_code') String? equipmentCode,
       @JsonKey(name: 'fleet_id') dynamic fleetId,
-      @JsonKey(name: 'equipment_site_id') String equipmentSiteId,
-      @JsonKey(name: 'category_name') String categoryName});
+      @JsonKey(name: 'equipment_site_id') String? equipmentSiteId,
+      @JsonKey(name: 'category_name') String? categoryName});
 }
 
 /// @nodoc
@@ -118,77 +118,77 @@ class _$WebsocketMessageEntityCopyWithImpl<$Res,
   @override
   $Res call({
     Object? id = null,
-    Object? equipmentId = null,
-    Object? senderNik = null,
-    Object? isRead = null,
-    Object? message = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? senderName = null,
-    Object? deviceType = null,
-    Object? categoryId = null,
-    Object? equipmentCode = null,
+    Object? equipmentId = freezed,
+    Object? senderNik = freezed,
+    Object? isRead = freezed,
+    Object? message = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
+    Object? senderName = freezed,
+    Object? deviceType = freezed,
+    Object? categoryId = freezed,
+    Object? equipmentCode = freezed,
     Object? fleetId = freezed,
-    Object? equipmentSiteId = null,
-    Object? categoryName = null,
+    Object? equipmentSiteId = freezed,
+    Object? categoryName = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      equipmentId: null == equipmentId
+      equipmentId: freezed == equipmentId
           ? _value.equipmentId
           : equipmentId // ignore: cast_nullable_to_non_nullable
-              as String,
-      senderNik: null == senderNik
+              as String?,
+      senderNik: freezed == senderNik
           ? _value.senderNik
           : senderNik // ignore: cast_nullable_to_non_nullable
-              as String,
-      isRead: null == isRead
+              as String?,
+      isRead: freezed == isRead
           ? _value.isRead
           : isRead // ignore: cast_nullable_to_non_nullable
-              as bool,
-      message: null == message
+              as bool?,
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
+              as String?,
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as String,
-      updatedAt: null == updatedAt
+              as String?,
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as String,
-      senderName: null == senderName
+              as String?,
+      senderName: freezed == senderName
           ? _value.senderName
           : senderName // ignore: cast_nullable_to_non_nullable
-              as String,
-      deviceType: null == deviceType
+              as String?,
+      deviceType: freezed == deviceType
           ? _value.deviceType
           : deviceType // ignore: cast_nullable_to_non_nullable
-              as String,
-      categoryId: null == categoryId
+              as String?,
+      categoryId: freezed == categoryId
           ? _value.categoryId
           : categoryId // ignore: cast_nullable_to_non_nullable
-              as String,
-      equipmentCode: null == equipmentCode
+              as String?,
+      equipmentCode: freezed == equipmentCode
           ? _value.equipmentCode
           : equipmentCode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       fleetId: freezed == fleetId
           ? _value.fleetId
           : fleetId // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      equipmentSiteId: null == equipmentSiteId
+      equipmentSiteId: freezed == equipmentSiteId
           ? _value.equipmentSiteId
           : equipmentSiteId // ignore: cast_nullable_to_non_nullable
-              as String,
-      categoryName: null == categoryName
+              as String?,
+      categoryName: freezed == categoryName
           ? _value.categoryName
           : categoryName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -204,19 +204,19 @@ abstract class _$$WebsocketMessageEntityImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      @JsonKey(name: 'equipment_id') String equipmentId,
-      @JsonKey(name: 'sender_nik') String senderNik,
-      @JsonKey(name: 'is_read') bool isRead,
-      String message,
-      @JsonKey(name: 'created_at') String createdAt,
-      @JsonKey(name: 'updated_at') String updatedAt,
-      @JsonKey(name: 'sender_name') String senderName,
-      @JsonKey(name: 'device_type') String deviceType,
-      @JsonKey(name: 'category_id') String categoryId,
-      @JsonKey(name: 'equipment_code') String equipmentCode,
+      @JsonKey(name: 'equipment_id') String? equipmentId,
+      @JsonKey(name: 'sender_nik') String? senderNik,
+      @JsonKey(name: 'is_read') bool? isRead,
+      String? message,
+      @JsonKey(name: 'created_at') String? createdAt,
+      @JsonKey(name: 'updated_at') String? updatedAt,
+      @JsonKey(name: 'sender_name') String? senderName,
+      @JsonKey(name: 'device_type') String? deviceType,
+      @JsonKey(name: 'category_id') String? categoryId,
+      @JsonKey(name: 'equipment_code') String? equipmentCode,
       @JsonKey(name: 'fleet_id') dynamic fleetId,
-      @JsonKey(name: 'equipment_site_id') String equipmentSiteId,
-      @JsonKey(name: 'category_name') String categoryName});
+      @JsonKey(name: 'equipment_site_id') String? equipmentSiteId,
+      @JsonKey(name: 'category_name') String? categoryName});
 }
 
 /// @nodoc
@@ -233,77 +233,77 @@ class __$$WebsocketMessageEntityImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? equipmentId = null,
-    Object? senderNik = null,
-    Object? isRead = null,
-    Object? message = null,
-    Object? createdAt = null,
-    Object? updatedAt = null,
-    Object? senderName = null,
-    Object? deviceType = null,
-    Object? categoryId = null,
-    Object? equipmentCode = null,
+    Object? equipmentId = freezed,
+    Object? senderNik = freezed,
+    Object? isRead = freezed,
+    Object? message = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
+    Object? senderName = freezed,
+    Object? deviceType = freezed,
+    Object? categoryId = freezed,
+    Object? equipmentCode = freezed,
     Object? fleetId = freezed,
-    Object? equipmentSiteId = null,
-    Object? categoryName = null,
+    Object? equipmentSiteId = freezed,
+    Object? categoryName = freezed,
   }) {
     return _then(_$WebsocketMessageEntityImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      equipmentId: null == equipmentId
+      equipmentId: freezed == equipmentId
           ? _value.equipmentId
           : equipmentId // ignore: cast_nullable_to_non_nullable
-              as String,
-      senderNik: null == senderNik
+              as String?,
+      senderNik: freezed == senderNik
           ? _value.senderNik
           : senderNik // ignore: cast_nullable_to_non_nullable
-              as String,
-      isRead: null == isRead
+              as String?,
+      isRead: freezed == isRead
           ? _value.isRead
           : isRead // ignore: cast_nullable_to_non_nullable
-              as bool,
-      message: null == message
+              as bool?,
+      message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: null == createdAt
+              as String?,
+      createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as String,
-      updatedAt: null == updatedAt
+              as String?,
+      updatedAt: freezed == updatedAt
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
-              as String,
-      senderName: null == senderName
+              as String?,
+      senderName: freezed == senderName
           ? _value.senderName
           : senderName // ignore: cast_nullable_to_non_nullable
-              as String,
-      deviceType: null == deviceType
+              as String?,
+      deviceType: freezed == deviceType
           ? _value.deviceType
           : deviceType // ignore: cast_nullable_to_non_nullable
-              as String,
-      categoryId: null == categoryId
+              as String?,
+      categoryId: freezed == categoryId
           ? _value.categoryId
           : categoryId // ignore: cast_nullable_to_non_nullable
-              as String,
-      equipmentCode: null == equipmentCode
+              as String?,
+      equipmentCode: freezed == equipmentCode
           ? _value.equipmentCode
           : equipmentCode // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       fleetId: freezed == fleetId
           ? _value.fleetId
           : fleetId // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      equipmentSiteId: null == equipmentSiteId
+      equipmentSiteId: freezed == equipmentSiteId
           ? _value.equipmentSiteId
           : equipmentSiteId // ignore: cast_nullable_to_non_nullable
-              as String,
-      categoryName: null == categoryName
+              as String?,
+      categoryName: freezed == categoryName
           ? _value.categoryName
           : categoryName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -313,19 +313,19 @@ class __$$WebsocketMessageEntityImplCopyWithImpl<$Res>
 class _$WebsocketMessageEntityImpl implements _WebsocketMessageEntity {
   _$WebsocketMessageEntityImpl(
       {required this.id,
-      @JsonKey(name: 'equipment_id') required this.equipmentId,
-      @JsonKey(name: 'sender_nik') required this.senderNik,
-      @JsonKey(name: 'is_read') required this.isRead,
-      required this.message,
-      @JsonKey(name: 'created_at') required this.createdAt,
-      @JsonKey(name: 'updated_at') required this.updatedAt,
-      @JsonKey(name: 'sender_name') required this.senderName,
-      @JsonKey(name: 'device_type') required this.deviceType,
-      @JsonKey(name: 'category_id') required this.categoryId,
-      @JsonKey(name: 'equipment_code') required this.equipmentCode,
-      @JsonKey(name: 'fleet_id') required this.fleetId,
-      @JsonKey(name: 'equipment_site_id') required this.equipmentSiteId,
-      @JsonKey(name: 'category_name') required this.categoryName});
+      @JsonKey(name: 'equipment_id') this.equipmentId,
+      @JsonKey(name: 'sender_nik') this.senderNik,
+      @JsonKey(name: 'is_read') this.isRead,
+      this.message,
+      @JsonKey(name: 'created_at') this.createdAt,
+      @JsonKey(name: 'updated_at') this.updatedAt,
+      @JsonKey(name: 'sender_name') this.senderName,
+      @JsonKey(name: 'device_type') this.deviceType,
+      @JsonKey(name: 'category_id') this.categoryId,
+      @JsonKey(name: 'equipment_code') this.equipmentCode,
+      @JsonKey(name: 'fleet_id') this.fleetId,
+      @JsonKey(name: 'equipment_site_id') this.equipmentSiteId,
+      @JsonKey(name: 'category_name') this.categoryName});
 
   factory _$WebsocketMessageEntityImpl.fromJson(Map<String, dynamic> json) =>
       _$$WebsocketMessageEntityImplFromJson(json);
@@ -334,42 +334,42 @@ class _$WebsocketMessageEntityImpl implements _WebsocketMessageEntity {
   String id;
   @override
   @JsonKey(name: 'equipment_id')
-  String equipmentId;
+  String? equipmentId;
   @override
   @JsonKey(name: 'sender_nik')
-  String senderNik;
+  String? senderNik;
   @override
   @JsonKey(name: 'is_read')
-  bool isRead;
+  bool? isRead;
   @override
-  String message;
+  String? message;
   @override
   @JsonKey(name: 'created_at')
-  String createdAt;
+  String? createdAt;
   @override
   @JsonKey(name: 'updated_at')
-  String updatedAt;
+  String? updatedAt;
   @override
   @JsonKey(name: 'sender_name')
-  String senderName;
+  String? senderName;
   @override
   @JsonKey(name: 'device_type')
-  String deviceType;
+  String? deviceType;
   @override
   @JsonKey(name: 'category_id')
-  String categoryId;
+  String? categoryId;
   @override
   @JsonKey(name: 'equipment_code')
-  String equipmentCode;
+  String? equipmentCode;
   @override
   @JsonKey(name: 'fleet_id')
   dynamic fleetId;
   @override
   @JsonKey(name: 'equipment_site_id')
-  String equipmentSiteId;
+  String? equipmentSiteId;
   @override
   @JsonKey(name: 'category_name')
-  String categoryName;
+  String? categoryName;
 
   @override
   String toString() {
@@ -394,19 +394,19 @@ class _$WebsocketMessageEntityImpl implements _WebsocketMessageEntity {
 abstract class _WebsocketMessageEntity implements WebsocketMessageEntity {
   factory _WebsocketMessageEntity(
           {required String id,
-          @JsonKey(name: 'equipment_id') required String equipmentId,
-          @JsonKey(name: 'sender_nik') required String senderNik,
-          @JsonKey(name: 'is_read') required bool isRead,
-          required String message,
-          @JsonKey(name: 'created_at') required String createdAt,
-          @JsonKey(name: 'updated_at') required String updatedAt,
-          @JsonKey(name: 'sender_name') required String senderName,
-          @JsonKey(name: 'device_type') required String deviceType,
-          @JsonKey(name: 'category_id') required String categoryId,
-          @JsonKey(name: 'equipment_code') required String equipmentCode,
-          @JsonKey(name: 'fleet_id') required dynamic fleetId,
-          @JsonKey(name: 'equipment_site_id') required String equipmentSiteId,
-          @JsonKey(name: 'category_name') required String categoryName}) =
+          @JsonKey(name: 'equipment_id') String? equipmentId,
+          @JsonKey(name: 'sender_nik') String? senderNik,
+          @JsonKey(name: 'is_read') bool? isRead,
+          String? message,
+          @JsonKey(name: 'created_at') String? createdAt,
+          @JsonKey(name: 'updated_at') String? updatedAt,
+          @JsonKey(name: 'sender_name') String? senderName,
+          @JsonKey(name: 'device_type') String? deviceType,
+          @JsonKey(name: 'category_id') String? categoryId,
+          @JsonKey(name: 'equipment_code') String? equipmentCode,
+          @JsonKey(name: 'fleet_id') dynamic fleetId,
+          @JsonKey(name: 'equipment_site_id') String? equipmentSiteId,
+          @JsonKey(name: 'category_name') String? categoryName}) =
       _$WebsocketMessageEntityImpl;
 
   factory _WebsocketMessageEntity.fromJson(Map<String, dynamic> json) =
@@ -417,52 +417,52 @@ abstract class _WebsocketMessageEntity implements WebsocketMessageEntity {
   set id(String value);
   @override
   @JsonKey(name: 'equipment_id')
-  String get equipmentId;
+  String? get equipmentId;
   @JsonKey(name: 'equipment_id')
-  set equipmentId(String value);
+  set equipmentId(String? value);
   @override
   @JsonKey(name: 'sender_nik')
-  String get senderNik;
+  String? get senderNik;
   @JsonKey(name: 'sender_nik')
-  set senderNik(String value);
+  set senderNik(String? value);
   @override
   @JsonKey(name: 'is_read')
-  bool get isRead;
+  bool? get isRead;
   @JsonKey(name: 'is_read')
-  set isRead(bool value);
+  set isRead(bool? value);
   @override
-  String get message;
-  set message(String value);
+  String? get message;
+  set message(String? value);
   @override
   @JsonKey(name: 'created_at')
-  String get createdAt;
+  String? get createdAt;
   @JsonKey(name: 'created_at')
-  set createdAt(String value);
+  set createdAt(String? value);
   @override
   @JsonKey(name: 'updated_at')
-  String get updatedAt;
+  String? get updatedAt;
   @JsonKey(name: 'updated_at')
-  set updatedAt(String value);
+  set updatedAt(String? value);
   @override
   @JsonKey(name: 'sender_name')
-  String get senderName;
+  String? get senderName;
   @JsonKey(name: 'sender_name')
-  set senderName(String value);
+  set senderName(String? value);
   @override
   @JsonKey(name: 'device_type')
-  String get deviceType;
+  String? get deviceType;
   @JsonKey(name: 'device_type')
-  set deviceType(String value);
+  set deviceType(String? value);
   @override
   @JsonKey(name: 'category_id')
-  String get categoryId;
+  String? get categoryId;
   @JsonKey(name: 'category_id')
-  set categoryId(String value);
+  set categoryId(String? value);
   @override
   @JsonKey(name: 'equipment_code')
-  String get equipmentCode;
+  String? get equipmentCode;
   @JsonKey(name: 'equipment_code')
-  set equipmentCode(String value);
+  set equipmentCode(String? value);
   @override
   @JsonKey(name: 'fleet_id')
   dynamic get fleetId;
@@ -470,14 +470,14 @@ abstract class _WebsocketMessageEntity implements WebsocketMessageEntity {
   set fleetId(dynamic value);
   @override
   @JsonKey(name: 'equipment_site_id')
-  String get equipmentSiteId;
+  String? get equipmentSiteId;
   @JsonKey(name: 'equipment_site_id')
-  set equipmentSiteId(String value);
+  set equipmentSiteId(String? value);
   @override
   @JsonKey(name: 'category_name')
-  String get categoryName;
+  String? get categoryName;
   @JsonKey(name: 'category_name')
-  set categoryName(String value);
+  set categoryName(String? value);
   @override
   @JsonKey(ignore: true)
   _$$WebsocketMessageEntityImplCopyWith<_$WebsocketMessageEntityImpl>

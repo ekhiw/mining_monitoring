@@ -185,7 +185,9 @@ class RegisterDeviceScreen extends HookConsumerWidget {
                             ref.watch(chatNotifierProvider.notifier).disconnect();
                             context.go(SGRoute.home.route);
                           });
-                          ref.watch(deviceRegisStateProvider.notifier).changeState();
+                          Future.delayed(Duration(milliseconds: 100), () {
+                            ref.watch(deviceRegisStateProvider.notifier).changeState();
+                          });
                         } catch (e) {
                           print(e);
                         }

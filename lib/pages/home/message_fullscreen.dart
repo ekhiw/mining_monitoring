@@ -121,9 +121,9 @@ class MessageFullscreen extends HookConsumerWidget {
 
                   ...chatState.messages.map((message) => MessageItem(
                     isMe: message.deviceType == "Mobile",
-                    senderName: message.senderName,
-                    message: message.message,
-                    sendAt: message.createdAt,
+                    senderName: "${message.senderName}",
+                    message: "${message.message}",
+                    sendAt: "${message.createdAt}",
                   )).toList(),
 
                   if (chatState.isLoading)

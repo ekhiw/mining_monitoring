@@ -77,8 +77,7 @@ class ChatNotifier extends _$ChatNotifier {
           .map<String>((e) => utf8.decode(e.data))
           .listen((data) {
         final d = json.decode(data) as Map<String, dynamic>;
-        final id = d["id"].toString();
-        final is_active = d["is_active"].toString();
+        print(d.toString());
         _addMessage(WebsocketMessageEntity.fromJson(d));
         callback(data);
       });

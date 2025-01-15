@@ -79,9 +79,9 @@ class MessageDialog extends HookConsumerWidget {
                   final isMe = message.senderNik == "me";
                   return MessageItem(
                       isMe: isMe,
-                      senderName: message.senderName,
-                      message: message.message,
-                      sendAt: message.createdAt,
+                      senderName: "${message.senderName}",
+                      message: "${message.message}",
+                      sendAt: "${message.createdAt}",
                     isFullWidth: true,
                   );
                 },

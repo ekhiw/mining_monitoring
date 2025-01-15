@@ -9,13 +9,13 @@ class LoginRepository {
   LoginRepository(this._dio);
   final Dio _dio;
 
-  Future<dynamic> login(String nik) async {
+  Future<dynamic> login(String nik,{required String? shiftId,required String unitId}) async {
     try {
       // TODO change to request model
       final response = await _dio.post(Endpoints.tabletLogin, data: {
-        "unit_id": 'e676e18f12',
+        "unit_id": unitId,
         "nik": nik,
-        "shift_id": '048C-NS',
+        "shift_id": shiftId,
         "login_type": 1
       });
 

@@ -18,6 +18,20 @@ class LoginForm extends ConsumerWidget {
 
     final loginState = ref.watch(loginStateProvider);
 
+
+    String _getShiftId() {
+      final now = DateTime.now();
+      final hour = now.hour;
+
+      // 05:00-17:00 -> DS (Day Shift)
+      // 17:00-05:00 -> NS (Night Shift)
+      if (hour >= 5 && hour < 17) {
+        return '048C-DS';
+      } else {
+        return '048C-NS';
+      }
+    }
+
     return Container(
       padding: EdgeInsets.fromLTRB(48, 24, 48, 24),
       child: Center(
@@ -72,7 +86,7 @@ class LoginForm extends ConsumerWidget {
                   fullWidthButton: true,
                   onPressed: () {
                     if (_nikController.text.isNotEmpty) {
-                      ref.read(loginStateProvider.notifier).login(_nikController.text);
+                      ref.read(loginStateProvider.notifier).login(_nikController.text,shiftId: _getShiftId(),unitId: getStoreHelper.getUnitId() );
                     }
 
                   },

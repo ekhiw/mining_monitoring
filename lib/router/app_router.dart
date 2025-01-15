@@ -45,7 +45,10 @@ class SGGoRouter {
               backgroundColor:TWColors.gray.shade900,
               title: AppBarWidget(),
             ),
-            body: navigationShell,
+            body: Container(
+              color: TW3Colors.gray.shade800,
+              child: navigationShell,
+            ),
           );
         },
         branches: <StatefulShellBranch>[

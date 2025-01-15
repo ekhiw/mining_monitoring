@@ -26,7 +26,11 @@ class DeviceRegisNotifier extends StateNotifier<DeviceRegisState> {
     state = const DeviceRegisState.checkDeviceLoading();
     final response = await deviceRegisRepository.checkDeviceId(deviceId);
     if (response is CheckDeviceIdResponseEntity) {
-      state = const DeviceRegisState.success();
+      if(response.data.isActive) {
+        state = const DeviceRegisState.success();
+      } else {
+        state = const DeviceRegisState.webSocketSetupLoading();
+      }
     } else {
       state = const DeviceRegisState.deviceNotFound();
     }

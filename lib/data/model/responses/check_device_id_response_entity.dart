@@ -22,7 +22,7 @@ class CheckDeviceIdResponseDataEntity with _$CheckDeviceIdResponseDataEntity {
   factory CheckDeviceIdResponseDataEntity({
     required String id,
     @JsonKey(name: 'is_active') required bool isActive,
-    @JsonKey(name: 'activated_at') required String activatedAt,
+    @JsonKey(name: 'activated_at') String? activatedAt,
     @JsonKey(name: 'created_at') required String createdAt,
     @JsonKey(name: 'updated_at') required String updatedAt,
     @JsonKey(name: 'head_unit_sn') required String headUnitSn,

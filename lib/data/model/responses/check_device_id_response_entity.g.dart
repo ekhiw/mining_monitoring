@@ -30,7 +30,7 @@ _$CheckDeviceIdResponseDataEntityImpl
         _$CheckDeviceIdResponseDataEntityImpl(
           id: json['id'] as String,
           isActive: json['is_active'] as bool,
-          activatedAt: json['activated_at'] as String,
+          activatedAt: json['activated_at'] as String?,
           createdAt: json['created_at'] as String,
           updatedAt: json['updated_at'] as String,
           headUnitSn: json['head_unit_sn'] as String,

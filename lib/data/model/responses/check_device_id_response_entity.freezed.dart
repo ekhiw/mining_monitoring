@@ -251,7 +251,7 @@ mixin _$CheckDeviceIdResponseDataEntity {
   @JsonKey(name: 'is_active')
   bool get isActive => throw _privateConstructorUsedError;
   @JsonKey(name: 'activated_at')
-  String get activatedAt => throw _privateConstructorUsedError;
+  String? get activatedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'created_at')
   String get createdAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'updated_at')
@@ -277,7 +277,7 @@ abstract class $CheckDeviceIdResponseDataEntityCopyWith<$Res> {
   $Res call(
       {String id,
       @JsonKey(name: 'is_active') bool isActive,
-      @JsonKey(name: 'activated_at') String activatedAt,
+      @JsonKey(name: 'activated_at') String? activatedAt,
       @JsonKey(name: 'created_at') String createdAt,
       @JsonKey(name: 'updated_at') String updatedAt,
       @JsonKey(name: 'head_unit_sn') String headUnitSn,
@@ -300,7 +300,7 @@ class _$CheckDeviceIdResponseDataEntityCopyWithImpl<$Res,
   $Res call({
     Object? id = null,
     Object? isActive = null,
-    Object? activatedAt = null,
+    Object? activatedAt = freezed,
     Object? createdAt = null,
     Object? updatedAt = null,
     Object? headUnitSn = null,
@@ -315,10 +315,10 @@ class _$CheckDeviceIdResponseDataEntityCopyWithImpl<$Res,
           ? _value.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
               as bool,
-      activatedAt: null == activatedAt
+      activatedAt: freezed == activatedAt
           ? _value.activatedAt
           : activatedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -351,7 +351,7 @@ abstract class _$$CheckDeviceIdResponseDataEntityImplCopyWith<$Res>
   $Res call(
       {String id,
       @JsonKey(name: 'is_active') bool isActive,
-      @JsonKey(name: 'activated_at') String activatedAt,
+      @JsonKey(name: 'activated_at') String? activatedAt,
       @JsonKey(name: 'created_at') String createdAt,
       @JsonKey(name: 'updated_at') String updatedAt,
       @JsonKey(name: 'head_unit_sn') String headUnitSn,
@@ -373,7 +373,7 @@ class __$$CheckDeviceIdResponseDataEntityImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? isActive = null,
-    Object? activatedAt = null,
+    Object? activatedAt = freezed,
     Object? createdAt = null,
     Object? updatedAt = null,
     Object? headUnitSn = null,
@@ -388,10 +388,10 @@ class __$$CheckDeviceIdResponseDataEntityImplCopyWithImpl<$Res>
           ? _value.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
               as bool,
-      activatedAt: null == activatedAt
+      activatedAt: freezed == activatedAt
           ? _value.activatedAt
           : activatedAt // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -419,7 +419,7 @@ class _$CheckDeviceIdResponseDataEntityImpl
   _$CheckDeviceIdResponseDataEntityImpl(
       {required this.id,
       @JsonKey(name: 'is_active') required this.isActive,
-      @JsonKey(name: 'activated_at') required this.activatedAt,
+      @JsonKey(name: 'activated_at') this.activatedAt,
       @JsonKey(name: 'created_at') required this.createdAt,
       @JsonKey(name: 'updated_at') required this.updatedAt,
       @JsonKey(name: 'head_unit_sn') required this.headUnitSn,
@@ -436,7 +436,7 @@ class _$CheckDeviceIdResponseDataEntityImpl
   final bool isActive;
   @override
   @JsonKey(name: 'activated_at')
-  final String activatedAt;
+  final String? activatedAt;
   @override
   @JsonKey(name: 'created_at')
   final String createdAt;
@@ -506,7 +506,7 @@ abstract class _CheckDeviceIdResponseDataEntity
   factory _CheckDeviceIdResponseDataEntity(
           {required final String id,
           @JsonKey(name: 'is_active') required final bool isActive,
-          @JsonKey(name: 'activated_at') required final String activatedAt,
+          @JsonKey(name: 'activated_at') final String? activatedAt,
           @JsonKey(name: 'created_at') required final String createdAt,
           @JsonKey(name: 'updated_at') required final String updatedAt,
           @JsonKey(name: 'head_unit_sn') required final String headUnitSn,
@@ -523,7 +523,7 @@ abstract class _CheckDeviceIdResponseDataEntity
   bool get isActive;
   @override
   @JsonKey(name: 'activated_at')
-  String get activatedAt;
+  String? get activatedAt;
   @override
   @JsonKey(name: 'created_at')
   String get createdAt;

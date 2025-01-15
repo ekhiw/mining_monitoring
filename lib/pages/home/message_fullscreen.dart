@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -7,7 +5,11 @@ import 'package:mining_monitoring/di/providers/login_provider.dart';
 import 'package:mining_monitoring/pages/home/message_item.dart';
 import 'package:tailwind_colors/tailwind_colors.dart';
 
+import '../../data/store/user_store.dart';
+import '../../di/component/service_locator.dart';
 import '../../di/providers/chat_provider.dart';
+
+GetUserStoreHelper getStoreHelper = getIt<GetUserStoreHelper>();
 
 class MessageFullscreen extends HookConsumerWidget {
   const MessageFullscreen({
@@ -30,13 +32,12 @@ class MessageFullscreen extends HookConsumerWidget {
       void onScroll() {
         if (scrollController.position.pixels >=
             scrollController.position.maxScrollExtent * 0.8) {
-          chatNotifier.getAllChat();
+          chatNotifier.getAllChat(equipmentId: getStoreHelper.getUnitId());
         }
       }
 
       Future.delayed(Duration(seconds: 1), () {
-        print("EKHIW DELAYED GET ALL CHAT");
-        chatNotifier.getAllChat(refresh: true);
+        chatNotifier.getAllChat(refresh: true,equipmentId: getStoreHelper.getUnitId());
         chatNotifier.getTemplateMessage();
       });
 
@@ -103,7 +104,7 @@ class MessageFullscreen extends HookConsumerWidget {
           const SizedBox(height: 16),
         Expanded(
           child: RefreshIndicator(
-            onRefresh: () => chatNotifier.getAllChat(refresh: true),
+            onRefresh: () => chatNotifier.getAllChat(refresh: true,equipmentId: getStoreHelper.getUnitId()),
             child: SingleChildScrollView(
               controller: scrollController,
               reverse: true,
@@ -201,7 +202,7 @@ class MessageFullscreen extends HookConsumerWidget {
                 icon: const Icon(Icons.send, color: Colors.white),
                 onPressed: () {
                   if (messageController.text.isNotEmpty) {
-                    chatNotifier.sendMessage(messageController.text);
+                    chatNotifier.sendMessage(messageController.text,equipmentId: getStoreHelper.getUnitId());
                     messageController.clear();
                   }
                 },

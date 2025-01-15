@@ -23,7 +23,7 @@ mixin _$ErrorResponseEntity {
   int get code => throw _privateConstructorUsedError;
   bool get status => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
-  String get data => throw _privateConstructorUsedError;
+  String? get data => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +37,7 @@ abstract class $ErrorResponseEntityCopyWith<$Res> {
           ErrorResponseEntity value, $Res Function(ErrorResponseEntity) then) =
       _$ErrorResponseEntityCopyWithImpl<$Res, ErrorResponseEntity>;
   @useResult
-  $Res call({int code, bool status, String message, String data});
+  $Res call({int code, bool status, String message, String? data});
 }
 
 /// @nodoc
@@ -56,7 +56,7 @@ class _$ErrorResponseEntityCopyWithImpl<$Res, $Val extends ErrorResponseEntity>
     Object? code = null,
     Object? status = null,
     Object? message = null,
-    Object? data = null,
+    Object? data = freezed,
   }) {
     return _then(_value.copyWith(
       code: null == code
@@ -71,10 +71,10 @@ class _$ErrorResponseEntityCopyWithImpl<$Res, $Val extends ErrorResponseEntity>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      data: null == data
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -87,7 +87,7 @@ abstract class _$$ErrorResponseEntityImplCopyWith<$Res>
       __$$ErrorResponseEntityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int code, bool status, String message, String data});
+  $Res call({int code, bool status, String message, String? data});
 }
 
 /// @nodoc
@@ -104,7 +104,7 @@ class __$$ErrorResponseEntityImplCopyWithImpl<$Res>
     Object? code = null,
     Object? status = null,
     Object? message = null,
-    Object? data = null,
+    Object? data = freezed,
   }) {
     return _then(_$ErrorResponseEntityImpl(
       code: null == code
@@ -119,10 +119,10 @@ class __$$ErrorResponseEntityImplCopyWithImpl<$Res>
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      data: null == data
+      data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -146,7 +146,7 @@ class _$ErrorResponseEntityImpl implements _ErrorResponseEntity {
   @override
   final String message;
   @override
-  final String data;
+  final String? data;
 
   @override
   String toString() {
@@ -188,7 +188,7 @@ abstract class _ErrorResponseEntity implements ErrorResponseEntity {
       {required final int code,
       required final bool status,
       required final String message,
-      required final String data}) = _$ErrorResponseEntityImpl;
+      required final String? data}) = _$ErrorResponseEntityImpl;
 
   factory _ErrorResponseEntity.fromJson(Map<String, dynamic> json) =
       _$ErrorResponseEntityImpl.fromJson;
@@ -200,7 +200,7 @@ abstract class _ErrorResponseEntity implements ErrorResponseEntity {
   @override
   String get message;
   @override
-  String get data;
+  String? get data;
   @override
   @JsonKey(ignore: true)
   _$$ErrorResponseEntityImplCopyWith<_$ErrorResponseEntityImpl> get copyWith =>

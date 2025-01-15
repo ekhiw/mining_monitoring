@@ -10,7 +10,7 @@ class ErrorResponseEntity with _$ErrorResponseEntity {
     required int code,
     required bool status,
     required String message,
-    required String data,
+    required String? data,
   }) = _ErrorResponseEntity;
 
   factory ErrorResponseEntity.fromJson(Map<String, dynamic> json) =>

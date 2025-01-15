@@ -12,7 +12,7 @@ _$ErrorResponseEntityImpl _$$ErrorResponseEntityImplFromJson(
       code: (json['code'] as num).toInt(),
       status: json['status'] as bool,
       message: json['message'] as String,
-      data: json['data'] as String,
+      data: json['data'] as String?,
     );
 
 Map<String, dynamic> _$$ErrorResponseEntityImplToJson(

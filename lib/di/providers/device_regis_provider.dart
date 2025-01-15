@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:injectable/injectable.dart';
-import 'package:mining_monitoring/data/model/responses/api_error_response.dart';
+import 'package:mining_monitoring/data/model/responses/error_response_entity.dart';
 import 'package:mining_monitoring/data/model/state/device_regis_state.dart';
 import 'package:mining_monitoring/data/model/state/login_state.dart';
 import 'package:mining_monitoring/data/repository/device_regis_repository.dart';
@@ -26,7 +26,6 @@ class DeviceRegisNotifier extends StateNotifier<DeviceRegisState> {
     state = const DeviceRegisState.checkDeviceLoading();
     final response = await deviceRegisRepository.checkDeviceId(deviceId);
     if (response is CheckDeviceIdResponseEntity) {
-      print("EKHIW check ${response.toJson().toString()}");
       state = const DeviceRegisState.success();
     } else {
       state = const DeviceRegisState.deviceNotFound();
@@ -34,13 +33,11 @@ class DeviceRegisNotifier extends StateNotifier<DeviceRegisState> {
   }
   
   Future<void> regisDeviceId(String deviceId) async {
-    print("EKHIW DEVICE ID ${deviceId}");
     state = const DeviceRegisState.deviceRegisLoading();
     final response = await deviceRegisRepository.registerDeviceId(deviceId);
     if (response is CheckDeviceIdResponseEntity) {
-      print("EKHIW check ${response.toJson().toString()}");
       state = const DeviceRegisState.webSocketSetupLoading();
-    } else if (response is ApiErrorResponse){
+    } else if (response is ErrorResponseEntity){
       state = DeviceRegisState.error(response.message);
     }
   }

@@ -14,7 +14,6 @@ import '../../constants/strings.dart';
 import '../../data/model/message_list_response_entity.dart';
 import '../../data/model/state/chat_state.dart';
 import '../../data/model/websocket_message_entity.dart';
-import '../../data/store/user_store.dart';
 import '../component/service_locator.dart';
 
 part 'chat_provider.g.dart';
@@ -22,8 +21,6 @@ part 'chat_provider.g.dart';
 final messageRepositoryProvider = Provider<MessageRespository>((ref) {
   return MessageRespository(ref.read(dioProvider));
 });
-
-GetUserStoreHelper getStoreHelper = getIt<GetUserStoreHelper>();
 
 @riverpod
 Client centrifugeClient(CentrifugeClientRef ref) {
@@ -115,16 +112,24 @@ class ChatNotifier extends _$ChatNotifier {
     _subscription?.unsubscribe();
   }
 
-  Future<void> sendMessage(String text, {String? categoryId}) async {
+  Future<void> sendMessage(String text, {String? categoryId="1", String? equipmentId="e676e18f12", bool shouldRefresh = false}) async {
     try {
+
+      if(equipmentId == null) {
+        return;
+      }
+
       final response = await messageRespository.sendMessage(
-        equipmentId: getStoreHelper.getUnitId() ?? Strings.unitId,
+        equipmentId: equipmentId,
         message: text,
         categoryId: categoryId,
       );
 
       if (response is MessageListResponseEntity) {
-        await getAllChat(refresh: true);
+        if(shouldRefresh) await getAllChat(refresh: true,equipmentId: getStoreHelper.getUnitId());
+        state = state.copyWith(
+          error: null
+        );
       } else {
         state = state.copyWith(
           error: "Failed to send message",
@@ -143,7 +148,12 @@ class ChatNotifier extends _$ChatNotifier {
     );
   }
 
-  Future<void> getAllChat({bool refresh = false}) async {
+  Future<void> getAllChat({bool refresh = false, int? limit=30,String? sort='created_at,asc', String? equipmentId=Strings.unitId}) async {
+
+    if (equipmentId == null) {
+      return;
+    }
+
     if (refresh) {
       state = state.copyWith(
         messages: [],
@@ -161,9 +171,9 @@ class ChatNotifier extends _$ChatNotifier {
     try {
       final response = await messageRespository.getAllMessage(
         page: state.currentPage,
-        limit: 30,
-        sort: 'created_at,asc',
-        equipmentId: getStoreHelper.getUnitId() ?? Strings.unitId,
+        limit: limit,
+        sort: sort,
+        equipmentId: equipmentId,
       );
 
       if (response is MessageListResponseEntity) {
@@ -174,6 +184,7 @@ class ChatNotifier extends _$ChatNotifier {
           messages: [...state.messages, ...newMessages],
           isLoading: false,
           currentPage: state.currentPage+1,
+          error: null
         );
       } else {
         state = state.copyWith(
@@ -189,7 +200,7 @@ class ChatNotifier extends _$ChatNotifier {
     }
   }
 
-  Future<void> getTemplateMessage({int? limit}) async {
+  Future<void> getTemplateMessage({int? limit = 30}) async {
     try {
       final response = await messageRespository.getTemplateMessage(
         limit: limit,
@@ -200,6 +211,7 @@ class ChatNotifier extends _$ChatNotifier {
 
         state = state.copyWith(
           templateMessages: templateMessage,
+          error: null,
         );
       } else {
         state = state.copyWith(

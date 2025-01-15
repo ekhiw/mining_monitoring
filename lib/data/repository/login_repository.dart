@@ -1,9 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mining_monitoring/constants/endpoints.dart';
+import 'package:mining_monitoring/data/model/responses/error_response_entity.dart';
 import 'package:mining_monitoring/data/model/responses/user_response_entity.dart';
-
-import '../model/responses/api_error_response.dart';
 
 @injectable
 class LoginRepository {
@@ -26,7 +25,7 @@ class LoginRepository {
         return UserResponseEntity.fromJson(response.data);
       }
     } on DioException catch (e) {
-      return ApiErrorResponse.fromJson(e.response?.data);
+      return ErrorResponseEntity.fromJson(e.response?.data);
     }
   }
 }

@@ -89,7 +89,6 @@ class SGGoRouter {
 
 final String? Function(BuildContext context, GoRouterState state) _authGuard =
     (BuildContext context, GoRouterState state) {
-  print('EKHIWWWWW GET NIK ${getStoreHelper.getNik()} ${state.uri} ${state.fullPath} ${state.topRoute} ${state.name}');
 
   if (!(getStoreHelper.getNik() != null) && state.fullPath != SGRoute.register_device.route) {
     return SGRoute.login.route;

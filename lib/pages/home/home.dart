@@ -420,7 +420,6 @@ class HomeScreen extends HookConsumerWidget {
 
     useEffect(() {
       ref.watch(chatNotifierProvider.notifier).initConnection("ws/fms-dev/monitoring/messages/equipments/${Strings.unitId}",(data){
-        print("EKHIW CONNECT CALLBACK $data");
         if (!ref.read(chatNotifierProvider).isDialogOpen && !ref.read(chatNotifierProvider).isMessageFullscreen) {
           showDialog(
             barrierDismissible: false,

@@ -109,7 +109,6 @@ class RegisterDeviceScreen extends HookConsumerWidget {
     final chatState = ref.watch(chatNotifierProvider);
 
     useEffect(() {
-      print("EKHIW $deviceId");
 
       Future.delayed(Duration(seconds: 2)).then((_) {
         ref.watch(deviceRegisStateProvider.notifier).checkId(deviceId);
@@ -182,10 +181,9 @@ class RegisterDeviceScreen extends HookConsumerWidget {
                       webSocketSetupLoading: () {
                         try {
                           ref.watch(chatNotifierProvider.notifier).initConnection("ws/fms-dev/equipments/devices/$deviceId/activated",(data){
-                            print("EKHIW CONNECT CALLBACK $data");
+
                             ref.watch(chatNotifierProvider.notifier).disconnect();
                             context.go(SGRoute.home.route);
-
                           });
                           ref.watch(deviceRegisStateProvider.notifier).changeState();
                         } catch (e) {

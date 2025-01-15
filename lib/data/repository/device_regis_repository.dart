@@ -13,7 +13,6 @@ class DeviceRegisRepository {
   Future<dynamic> checkDeviceId(String deviceId) async {
     try {
       Response response = await _dio.get("${Endpoints.checkDeviceById}${deviceId}");
-      print(response.data.toString());
 
       if (response.statusCode == 200) {
         return CheckDeviceIdResponseEntity.fromJson(response.data);

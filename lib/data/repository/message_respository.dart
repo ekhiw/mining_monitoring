@@ -2,9 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:mining_monitoring/constants/endpoints.dart';
 import 'package:mining_monitoring/data/model/message_list_response_entity.dart';
+import 'package:mining_monitoring/data/model/responses/error_response_entity.dart';
 import 'package:mining_monitoring/data/model/template_message_entity.dart';
-
-import '../model/responses/api_error_response.dart';
 
 @injectable
 class MessageRespository {
@@ -29,8 +28,7 @@ class MessageRespository {
         return MessageListResponseEntity.fromJson(response.data);
       }
     } on DioException catch (e) {
-      print("EKHIW ERROR ${e}");
-      return ApiErrorResponse.fromJson(e.response?.data);
+      return ErrorResponseEntity.fromJson(e.response?.data);
     }
   }
 
@@ -49,8 +47,7 @@ class MessageRespository {
         return TemplateMessageEntity.fromJson(response.data);
       }
     } on DioException catch (e) {
-      print("EKHIW ERROR ${e}");
-      return ApiErrorResponse.fromJson(e.response?.data);
+      return ErrorResponseEntity.fromJson(e.response?.data);
     }
 
   }
@@ -77,8 +74,7 @@ class MessageRespository {
         return MessageListResponseEntity.fromJson(response.data);
       }
     } on DioException catch (e) {
-      print("EKHIW ERROR ${e}");
-      return ApiErrorResponse.fromJson(e.response?.data);
+      return ErrorResponseEntity.fromJson(e.response?.data);
     }
   }
 }

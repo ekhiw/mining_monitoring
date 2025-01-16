@@ -1,39 +1,62 @@
 
+
 # mining_monitoring
 
-Synapsis
+Mining monitoring app test
 
 ## Getting Started
 
 recommended setup to run code
 
-> [✓] Flutter (Channel stable, 3.27.1, on macOS 14.2 23C64 darwin-arm64, locale en-ID)
-• Flutter version 3.27.1 on channel stable at /Users/ekhiw/flutter
-• Upstream repository https://github.com/flutter/flutter.git
-• Framework revision 17025dd882 (4 weeks ago), 2024-12-17 03:23:09 +0900
-• Engine revision cb4b5fff73
-• Dart version 3.6.0
-• DevTools version 2.40.2
-[✓] Android Studio (version 2024.2)
-• Android Studio at /Applications/Android Studio.app/Contents
-• Flutter plugin can be installed from:
-🔨 https://plugins.jetbrains.com/plugin/9212-flutter
-• Dart plugin can be installed from:
-🔨 https://plugins.jetbrains.com/plugin/6351-dart
+> [✓] Flutter (Channel stable, 3.27.1, on macOS 14.2 23C64 darwin-arm64, locale en-ID)  
+• Flutter version 3.27.1 on channel stable at /Users/ekhiw/flutter  
+• Upstream repository https://github.com/flutter/flutter.git  
+• Framework revision 17025dd882 (4 weeks ago), 2024-12-17 03:23:09 +0900  
+• Engine revision cb4b5fff73  
+• Dart version 3.6.0  
+• DevTools version 2.40.2  
+[✓] Android Studio (version 2024.2)  
+• Android Studio at /Applications/Android Studio.app/Contents  
+• Flutter plugin can be installed from:  
+🔨 https://plugins.jetbrains.com/plugin/9212-flutter  
+• Dart plugin can be installed from:  
+🔨 https://plugins.jetbrains.com/plugin/6351-dart  
 • Java version OpenJDK Runtime Environment (build 21.0.3+-79915917-b509.11)
 
 run this to generate riverpod,getx, and freezed code
 
 ``` dart run build_runner build --delete-conflicting-outputs ```
 
-All 
+### Device Id
+the device id is hardcoded in ```lib/constants/strings.dart```
+>static const String deviceId = "TEST-DEVICE01";
+
+in device registration page ```lib/pages/regdevice/register_device.dart``` you can change if you want deviceId to be randomed
+
+ ```  
+// use this for random deviceId  
+// final deviceId = "TEST${Random().nextInt(10000)}";  
+  
+// use this for hardcoded deviceId  
+final deviceId = Strings.deviceId;
+```
+
+After running the app it will call get device by id API, app will register deviceId if its not found, after that it will show deviceId to wait for activation.
+Activate manually using postman using ```/equipments/devices/{deviceId}/activation```
+
+### UnitId
+After login using user that tied to deviceId app will save unitId information using ```lib/data/store/user_store.dart``` and used to connect to websocket
+
+### Endpoints
+all endpoints are stored in ```lib/constants/endpoints.dart```
+
 
 # Technical documentation
-you can find it here
+you can find it here  
 [Link Text](/tech_doc.md)
 
 # Unit test
-to 
+to
 
 # Task
 - [ ] Slicing UI
@@ -45,7 +68,7 @@ to
         - [x] Login form error state
         - [x] Login form success state  (5 points)
     - [x] Home/dashboard page  (10 points)
-        - [x] Top status bar 
+        - [x] Top status bar
         - [x] Machine indicator display
         - [x] Activity drawer
         - [x] Map view
@@ -64,22 +87,22 @@ to
         - [x] Technical document (30 points)
         - [ ] Build and running on linux (50 points)
         - [ ] Implement Unit testing or Integration testing (50 points)
-      - [x] Register device wizard
-        - [x] Check device registration status  (5 point)
-        - [x] Handle navigation if device already registered but not login (5 points)
-        - [x] Handle navigation if device already registered and already login
-        - [x] Connect and subscribe to the WebSocket device channel (10 points)
-        - [x] API integration for device registration  (5 points)
-        - [x] Handle navigation to Waiting Activation Page based on device status in API and Websocket data
-        - [x] Handle navigation to Login Page based on status in API and Websocket data (10 points)
+        - [x] Register device wizard
+            - [x] Check device registration status  (5 point)
+            - [x] Handle navigation if device already registered but not login (5 points)
+            - [x] Handle navigation if device already registered and already login
+            - [x] Connect and subscribe to the WebSocket device channel (10 points)
+            - [x] API integration for device registration  (5 points)
+            - [x] Handle navigation to Waiting Activation Page based on device status in API and Websocket data
+            - [x] Handle navigation to Login Page based on status in API and Websocket data (10 points)
     - [x] Login
         - [x] API integration for login (5  point)
         - [x] API error handling (5 point)
         - [x] Save user info to storage
     - [x] Home/dashboard page
-      - [x] API integration for login
-      - [x] Listen to websocket (10 point)
-      - [x] Message dialog slider handling (10 points)
+        - [x] API integration for login
+        - [x] Listen to websocket (10 point)
+        - [x] Message dialog slider handling (10 points)
     - [x] Message
         - [x] Get template message from api (5 points)
         - [x] Get all message from unitId  (5 point)
